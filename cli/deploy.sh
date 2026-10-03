@@ -45,7 +45,7 @@ LONGO="public, max-age=86400"
 echo "publicando em s3://$AQUA_BUCKET/$PREFIX/"
 subir "$TMP/index.html" index.html "text/html; charset=utf-8" "$CURTO"
 subir app.css app.css "text/css; charset=utf-8" "$CURTO"
-for f in app.js engine.js dados/fontes.js dados/corpus.js dados/decisoes.js dados/deslocamentos.js; do
+for f in app.js engine.js dados/fontes.js dados/corpus.js dados/decisoes.js dados/deslocamentos.js fatos/ativo.js; do
   subir "$f" "$f" "$JS" "$CURTO"
 done
 subir sw.js sw.js "$JS" "no-cache"

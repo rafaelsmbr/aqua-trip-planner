@@ -1,0 +1,4 @@
+{
+  "fato_novo": "O Henrik só consegue na terça, às 16:00.",
+  "mudar": [ { "em": "agendados", "id": "A-HENRIK", "dia": "2026-10-20", "inicio": "16:00", "fim": "16:40" } ]
+}

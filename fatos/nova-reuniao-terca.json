@@ -1,0 +1,5 @@
+{
+  "fato_novo": "Entrou uma reunião com a JBS na terça, 16:30, no estande deles no Hall 4.",
+  "incluir": [ { "em": "compromissos", "id": "C-20", "dia": "2026-10-20", "inicio": "16:30", "fim": "17:15",
+                 "titulo": "Reunião com a JBS", "local": "Estande da JBS, Hall 4", "firmeza": "fixo", "participantes": ["Diretoria JBS"] } ]
+}

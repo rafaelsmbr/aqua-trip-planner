@@ -29,6 +29,8 @@ AQUA.fontes = [
   { id:"F-018", tipo:"mapa", referencia:"https://www.thetrainline.com/en/train-times/paris-gare-du-nord-to-lille-europe", consultado_em:"2026-10-02T10:14:00-03:00", rotulo:"Trainline Paris - Lille" },
   { id:"F-019", tipo:"suposicao", referencia:"Estimativa própria: centro de Lille a periferia agrícola 20-30 km", consultado_em:"2026-10-02T10:15:00-03:00", rotulo:"Lille - cooperativa (estimado)" },
   { id:"F-021", tipo:"web", referencia:"https://flightqueue.com/how-early-to-arrive-at-charles-de-gaulle-airport", consultado_em:"2026-10-02T10:15:00-03:00", rotulo:"Antecedência em CDG" },
+  { id:"F-041", tipo:"suposicao", referencia:"Estimativa própria: câmbio de R$ 6,20 por euro para converter custos em reais", consultado_em:"2026-10-02T21:00:00-03:00", rotulo:"Câmbio assumido" },
+  { id:"F-042", tipo:"suposicao", referencia:"Estimativa própria: GRU até o centro de São Paulo de carro no início da manhã, 45 a 60 min", consultado_em:"2026-10-02T21:00:00-03:00", rotulo:"GRU - São Paulo (estimado)" },
   { id:"F-022", tipo:"suposicao", referencia:"Estimativa própria: antecedência em GRU, executiva + Platinum", consultado_em:"2026-10-02T10:15:00-03:00", rotulo:"Antecedência em GRU (estimado)" },
 
   // ---------- verificacao na web ----------
@@ -112,5 +114,7 @@ AQUA.evidencias = [
   { id:"E-054", fonte:"F-028", trecho:"Le Baratin: closed Monday and Sunday. Tuesday 7:30 PM to midnight; Wednesday to Saturday 12:00-14:00 and 19:30 to midnight.", endereco:"sortiraparis.com", acessado_em:"2026-10-02T10:18:00-03:00" },
   { id:"E-055", fonte:"F-034", trecho:"Calendar of strikes planned in France this autumn: a five-day airline crew strike notice covers 17 to 21 October 2026. Published 25 September 2026.", endereco:"thelocal.fr", acessado_em:"2026-10-02T10:18:00-03:00" },
   { id:"E-056", fonte:"F-019", trecho:"Estimativa nossa, não medida: o corpus não traz o endereço da planta da Coopérative du Nord, só a cidade. Adotamos 30 min de carro de Lille Europe, proxy para centro de Lille até periferia agrícola a 20-30 km. Com o endereço real, o trecho é recalculado.", endereco:"estimativa própria (não é fonte externa)", acessado_em:"2026-10-02T10:15:00-03:00" },
-  { id:"E-057", fonte:"F-022", trecho:"Estimativa nossa, não medida: 2h05 de antecedência em GRU para voo intercontinental em executiva com Flying Blue Platinum (fila prioritária de check-in e de segurança). O plano usa essa folga na sexta.", endereco:"estimativa própria (não é fonte externa)", acessado_em:"2026-10-02T10:15:00-03:00" }
+  { id:"E-057", fonte:"F-022", trecho:"Estimativa nossa, não medida: 2h05 de antecedência em GRU para voo intercontinental em executiva com Flying Blue Platinum (fila prioritária de check-in e de segurança). O plano usa essa folga na sexta.", endereco:"estimativa própria (não é fonte externa)", acessado_em:"2026-10-02T10:15:00-03:00" },
+  { id:"E-058", fonte:"F-041", trecho:"Estimativa nossa, não medida: custos em reais convertidos a R$ 6,20 por euro. Um carro do escritório até GRU, cerca de R$ 210, vira EUR 35.", endereco:"estimativa própria (não é fonte externa)", acessado_em:"2026-10-02T21:00:00-03:00" },
+  { id:"E-059", fonte:"F-042", trecho:"Estimativa nossa, não medida: de GRU ao centro de São Paulo, carro no início da manhã de quinta, 45 a 60 min. O plano usa 50. O endereço de destino (casa ou escritório) não está no corpus.", endereco:"estimativa própria (não é fonte externa)", acessado_em:"2026-10-02T21:00:00-03:00" }
 ];

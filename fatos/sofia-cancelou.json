@@ -1,5 +1,4 @@
 {
-  "_doc": "Fato novo de exemplo: a contraparte do almoco de domingo caiu.",
-  "fato_novo": "A Sofia Marchetti cancelou o almoco de domingo; ela nao vem mais a Paris.",
-  "escolhas": { "almoco_sofia": "perto_da_feira" }
+  "fato_novo": "A Sofia Marchetti cancelou o almoço de domingo; ela não vem mais a Paris.",
+  "remover": [ { "em": "compromissos", "id": "C-07" } ]
 }

@@ -30,6 +30,7 @@
     <button class="health" id="healthBtn" aria-label="Travas de consistência"></button>
     <button class="icon-btn fact" id="factBtn" aria-label="Fato novo"></button>
   </div>
+  <div class="factbar" id="factBar" hidden></div>
 </header>
 
 <main class="wrap">
@@ -64,7 +65,7 @@
     <div class="card">
       <p class="hint" style="margin-top:0">
         Se o teto apertar, qual combinação é a mais barata que ainda passa nas
-        <b id="nGuards">16</b> travas? Testa as 64 combinações possíveis e diz o que você sacrifica.
+        <b id="nGuards">18</b> travas? Testa as 64 combinações possíveis e diz o que você sacrifica.
       </p>
       <div class="budget-in">
         <input type="number" id="budgetIn" inputmode="numeric" placeholder="Teto em EUR" aria-label="Teto em EUR">
@@ -123,6 +124,7 @@
 <script src="dados/corpus.js"></script>
 <script src="dados/decisoes.js"></script>
 <script src="dados/deslocamentos.js"></script>
+<script src="fatos/ativo.js"></script>
 <script src="engine.js"></script>
 <script src="app.js"></script>
 <script>

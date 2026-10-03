@@ -1,0 +1,4 @@
+{
+  "fato_novo": "O Le Duc confirmou que não abre no domingo 18.",
+  "mudar": [ { "em": "restaurantes", "id": "RES-01", "indisponivel_corpus": ["2026-10-17", "2026-10-18"] } ]
+}

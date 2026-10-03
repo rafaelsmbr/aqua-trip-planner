@@ -1,13 +1,13 @@
 /* Service worker: o roteiro abre sem internet (no avião, ou sem roaming em Paris).
    Estratégia: rede primeiro, cache como reserva. Online, sempre vem a versão nova;
    offline, vem a última que funcionou. Só vale em HTTPS - em file:// nem é registrado. */
-const CACHE = "aqua-sial-v1";
+const CACHE = "aqua-sial-v2";
 
 // Sem "./" na lista: atrás do CloudFront o diretório puro não resolve para index.html,
 // e um único 404 aqui derrubaria a instalação inteira.
 const ARQUIVOS = [
   "./index.html", "./app.css", "./app.js", "./engine.js",
-  "./dados/fontes.js", "./dados/corpus.js", "./dados/decisoes.js", "./dados/deslocamentos.js",
+  "./dados/fontes.js", "./dados/corpus.js", "./dados/decisoes.js", "./dados/deslocamentos.js", "./fatos/ativo.js",
   "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"
 ];
 

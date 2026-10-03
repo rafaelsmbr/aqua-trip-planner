@@ -17,7 +17,7 @@ AQUA.decisoes = [
     ],
     opcoes:[
       { valor:"VOO-D", rotulo:"Air France AF-0459", sub:"direto, pousa 10:30 - EUR 2.610", recomendada:true, ref:"VOO-D",
-        a_favor:["Acumula Flying Blue, e você faz questão","Único com folga real (25 min) para a sessão das 13:00","Direto: sem risco de conexão perdida","Volta 18:55 e a que já está na sua agenda"],
+        a_favor:["Acumula Flying Blue, e você faz questão","Único com folga real (25 min) para a sessão das 13:00","Direto: sem risco de conexão perdida","Volta 18:55 é a que já está na sua agenda"],
         contra:["Air France está nominalmente no aviso de greve de 17 a 21/10","Se cancelar, você perde o sábado inteiro","EUR 490 mais caro que a LATAM"] },
       { valor:"VOO-B", rotulo:"LATAM LA-8022", sub:"direto, pousa 10:55 - EUR 2.120", ref:"VOO-B",
         a_favor:["Fora do aviso de greve (o aviso cobre só transportadoras francesas)","EUR 490 mais barato","Direto, e a volta 18:55 também bate com a agenda"],
@@ -44,7 +44,7 @@ AQUA.decisoes = [
         contra:["Queima uma das cinco noites em Paris"] },
       { valor:"trabalho", rotulo:"Jantar de trabalho", sub:"Clamato, frutos do mar - EUR ~160", ref:"RES-02",
         a_favor:["Aproveita a noite de sábado, que está vazia","Frutos do mar, que é o que você procura"],
-        contra:["Clamato e ruidoso e não aceita reserva, contra o que você já disse duas vezes","Le Duc está indisponível exatamente no sábado 17 (evento privado)","Seria o terceiro jantar de trabalho, e você pediu dois"] }
+        contra:["Clamato é ruidoso e não aceita reserva, contra o que você já disse duas vezes","Le Duc está indisponível exatamente no sábado 17 (evento privado)","Seria o terceiro jantar de trabalho, e você pediu dois"] }
     ],
     restricoes:["R-003","R-006"], fontes:["F-007","F-001","F-031"] },
 
@@ -70,10 +70,10 @@ AQUA.decisoes = [
   { id:"D-004", modo:"aberta", chave:"almoco_sofia", grupo:"Domingo",
     titulo:"Onde almoçar com a Sofia Marchetti",
     pergunta:"L'Arpège no centro de Paris, ou algo perto da feira?",
-    porque_voce_decide:"A Sofia e vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo.",
+    porque_voce_decide:"A Sofia é vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo.",
     conflito:[
-      { fonte:"F-005", ev:"E-015", rotulo:"Contatos: Sofia e vegetariana há anos" },
-      { fonte:"F-031", ev:"E-028", rotulo:"Seleção: L'Arpège e a única cozinha vegetal" }
+      { fonte:"F-005", ev:"E-015", rotulo:"Contatos: Sofia é vegetariana há anos" },
+      { fonte:"F-031", ev:"E-028", rotulo:"Seleção: L'Arpège é a única cozinha vegetal" }
     ],
     opcoes:[
       { valor:"arpege", rotulo:"L'Arpège, 7e", sub:"cozinha vegetal - EUR ~420 para dois", recomendada:true, ref:"RES-04",
@@ -176,7 +176,7 @@ AQUA.decisoes = [
   { id:"D-015", modo:"auto", chave:"jantar_domingo", grupo:"Domingo",
     titulo:"Jantar do time no Le Duc",
     escolha:"RES-01", ref:"RES-01", selecao:{catalogo:"restaurantes", id:"RES-01"},
-    justificativa:"E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc e a única que atende peixe em ambiente reservado. Clamato e ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.",
+    justificativa:"E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc é a única que atende peixe em ambiente reservado. Clamato é ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.",
     descartadas:[
       { opcao:"RES-02 Clamato", motivo:"Ruidoso e sem reserva. Você já disse que em lugar barulhento não escuta ninguém e a reunião não rende, e são cinco pessoas na mesa." },
       { opcao:"RES-03 Le Bistrot Paul Bert", motivo:"Carnes e cordeiro na base do cardápio, e você não come cordeiro." },
@@ -214,6 +214,29 @@ AQUA.decisoes = [
     escolha:"Ortega 10:00, Beltrán 11:00, sessão S-05 às 14:00",
     justificativa:"Terça é o único dia que a agenda deixou livre para circulação, e é o único dia em que o Rafael Ortega está no evento. Ele é fornecedor de duas investidas e fala espanhol, que você fala. O Tomás Beltrán não tem agenda fixa e vale um café. A sessão de private label às 14:00 e a que casa com sourcing, seu outro foco.",
     metodo:"misto", restricoes:["R-013"], fontes:["F-005","F-003","F-007"] }
+];
+
+/* Compromissos que o plano marcou (não vieram prontos do corpus). Ficam aqui, como dado,
+   para que um fato novo possa movê-los sem mexer no motor. `condicao` liga o item a uma
+   decisão aberta: só entra no roteiro se a escolha bater. */
+AQUA.agendados = [
+  { id:"A-HENRIK", dia:"2026-10-19", inicio:"10:00", fim:"10:40", tipo:"reuniao",
+    titulo:"Henrik Sørensen (Nordvest Foods) - números da transação",
+    local:"Sala de reunião reservada, Paris Nord Villepinte", participantes:["Henrik Sørensen"],
+    contato:"K-03", decisoes:["D-013"], fontes:["F-006","F-005"] },
+  { id:"A-ORTEGA", dia:"2026-10-20", inicio:"10:00", fim:"10:45", tipo:"reuniao",
+    titulo:"Rafael Ortega (Grupo Ibérica Fresh)", local:"Paris Nord Villepinte", participantes:["Rafael Ortega"],
+    contato:"K-05", decisoes:["D-020"], fontes:["F-005"] },
+  { id:"A-BELTRAN", dia:"2026-10-20", inicio:"11:00", fim:"11:40", tipo:"reuniao",
+    titulo:"Café com Tomás Beltrán", local:"Paris Nord Villepinte", participantes:["Tomás Beltrán"],
+    contato:"K-06", decisoes:["D-020"], fontes:["F-005"] },
+  { id:"A-PRIVATE", dia:"2026-10-20", inicio:"14:00", fim:"15:00", tipo:"sessao",
+    titulo:"SIAL: Private label - o que mudou no varejo europeu", local:"Hall 5A", caminhada_min:15,
+    sessao:"S-05", decisoes:["D-020"], fontes:["F-003"] },
+  { id:"A-CLAIRE", dia:"2026-10-20", inicio:"15:30", fim:"16:00", tipo:"reuniao",
+    titulo:"Café com Claire Dubois (Fonds Meridien)", local:"Área de café neutra, Paris Nord Villepinte",
+    participantes:["Claire Dubois"], contato:"K-04", condicao:{ claire:"cafe_curto" },
+    decisoes:["D-003"], fontes:["F-005"] }
 ];
 
 /* Restricoes percebidas, inclusive as que o pedido nao menciona. */

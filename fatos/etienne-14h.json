@@ -1,0 +1,4 @@
+{
+  "fato_novo": "O Étienne remarcou a reunião de sábado para as 14:00.",
+  "mudar": [ { "em": "compromissos", "id": "C-04", "inicio": "14:00", "fim": "15:00" } ]
+}

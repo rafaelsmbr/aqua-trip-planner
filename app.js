@@ -6,7 +6,9 @@
   var A = window.AQUA;
   var U = A.util;
   var LS = "aqua.escolhas.v1";
-  var INICIO = "2026-10-16", FIM = "2026-10-21";
+  var LS_FATO = "aqua.fato.v1";
+  // a viagem vai do primeiro ao último dia que o motor conhece (hoje sexta 16 a quinta 22)
+  var INICIO = A.dias[0].data, FIM = A.dias[A.dias.length - 1].data;
 
   // ---------- icones (SVG inline, traco 1.75, currentColor) ----------
   var P = {
@@ -47,16 +49,25 @@
   var agora = agoraViagem();
   var st = {
     escolhas: carregar(),
-    dia: faseDe(agora) === "durante" && agora.dia >= INICIO && agora.dia <= FIM ? agora.dia : "2026-10-17",
+    fato: carregarFato(),   // fato aplicado pelo painel; o de fatos/ativo.js tem precedência
+    dia: "2026-10-17",
     view: "roteiro",
-    atraso: 0,
     orcamento: null,
     abertos: {},        // deslocamentos expandidos
     notas: {},          // notas com "ver mais" abertas
     alertasAbertos: {}, // por dia
     seg: "fontes"
   };
-  var plano = null;
+  var plano = null, planoBase = null, diff = null, marcas = {}, erroFato = null;
+
+  function carregarFato() {
+    try { return JSON.parse(localStorage.getItem(LS_FATO)) || null; } catch (e) { return null; }
+  }
+  function salvarFato() {
+    try { if (st.fato) localStorage.setItem(LS_FATO, JSON.stringify(st.fato)); else localStorage.removeItem(LS_FATO); } catch (e) {}
+  }
+  function fatoDoArquivo() { return A.fatoAtivo || null; }
+  function fatoVigente() { return fatoDoArquivo() || st.fato || null; }
 
   function carregar() {
     try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch (e) { return {}; }
@@ -80,7 +91,19 @@
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "")
       .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
-  var CURTO = { "Sexta": "Sex", "Sábado": "Sáb", "Domingo": "Dom", "Segunda": "Seg", "Terça": "Ter", "Quarta": "Qua" };
+  var CURTO = { "Sexta": "Sex", "Sábado": "Sáb", "Domingo": "Dom", "Segunda": "Seg", "Terça": "Ter", "Quarta": "Qua", "Quinta": "Qui" };
+  function dd(data) { return (+data.slice(8)) + "/" + data.slice(5, 7); }
+  // link externo com alvo de toque de 44px
+  function linkExt(url, rotulo, icone, cls, aria) {
+    if (!url) return "";
+    return '<a class="lnk ' + (cls || "") + '" href="' + esc(url) + '" target="_blank" rel="noopener"' +
+      (aria ? ' aria-label="' + esc(aria) + '"' : "") + ">" + (icone ? ICON(icone, 15) : "") + "<span>" + rotulo + "</span>" + ICON("ext", 12) + "</a>";
+  }
+  function linkPrecoHtml(ref, rotulo) {
+    var lp = ref && A.linkPreco(ref);
+    if (!lp) return "";
+    return linkExt(lp.url, rotulo || "Ver agora", "wallet", "live", lp.rotulo);
+  }
   var TIPO = {
     voo: ["plane", "Voo"], sessao: ["mic", "Sessão"], reuniao: ["users", "Reunião"],
     refeicao: ["utensils", "Refeição"], hospedagem: ["bed", "Hospedagem"], livre: ["clock", "Livre"],
@@ -121,11 +144,17 @@
       return { dia: d.toISOString().slice(0, 10), min: d.getUTCHours() * 60 + d.getUTCMinutes(), simulado: false };
     }
     var paris = local(120);
-    return paris.dia >= "2026-10-17" ? paris : local(-180);
+    return paris.dia >= "2026-10-17" && paris.dia <= "2026-10-21" ? paris : local(-180);
+  }
+  // depois = passou do fim do último item do último dia
+  function fimDaViagem() {
+    var ult = plano.dias[plano.dias.length - 1];
+    var it = ult && ult.itens[ult.itens.length - 1];
+    return it ? fimMin(it) : 24 * 60;
   }
   function faseDe(n) {
     if (n.dia < INICIO || (n.dia === INICIO && n.min < 9 * 60)) return "antes";
-    if (n.dia > FIM) return "depois";
+    if (n.dia > FIM || (n.dia === FIM && n.min >= fimDaViagem())) return "depois";
     return "durante";
   }
   function emCurso(n) {
@@ -156,32 +185,28 @@
   // ---------- alertas por dia ----------
   // o motor emite alertas da viagem inteira; aqui cada um vai para o dia a que se refere
   var ALERTA_DIA = [
+    [/gru|escritório/i, "2026-10-16"],
     [/volta de quarta/i, "2026-10-21"],
-    [/convidada vegetariana|almoço de hotel/i, "2026-10-18"],
+    [/convidada vegetariana|almoço de hotel|jantar do time|casa atende/i, "2026-10-18"],
     [/segunda tem|visita à planta/i, "2026-10-19"],
-    [/claire e henrik|le baratin/i, "2026-10-20"]
+    [/le baratin/i, "2026-10-20"]
   ];
+  function diaDoItem(re) {
+    var i = plano.itens.filter(function (x) { return re(x); })[0];
+    return i ? i.dia : null;
+  }
   function diaDoAlerta(a) {
+    var mm = /^Sem trajeto calculado para (.+)$/.exec(a.titulo);
+    if (mm) return diaDoItem(function (x) { return x.titulo === mm[1]; }) || "2026-10-17";
+    mm = /^Sem janela de almoço na (\S+)/i.exec(a.titulo);
+    if (mm) { var d = A.dias.filter(function (x) { return x.rotulo.toLowerCase() === mm[1].toLowerCase(); })[0]; if (d) return d.data; }
+    if (/claire e henrik/i.test(a.titulo)) return diaDoItem(function (x) { return x.ref_agendado === "A-CLAIRE"; }) || "2026-10-20";
+    if (/reunião das/i.test(a.titulo)) return diaDoItem(function (x) { return x.ref_compromisso === "C-04"; }) || "2026-10-17";
     for (var k = 0; k < ALERTA_DIA.length; k++) if (ALERTA_DIA[k][0].test(a.titulo)) return ALERTA_DIA[k][1];
     return "2026-10-17";
   }
-  function alertaAtraso() {
-    if (!st.atraso) return null;
-    var novo = U.hm(U.m(plano.pronto_sabado) + st.atraso);
-    var folga = plano.folga_abertura_min - st.atraso;
-    var perdeu = folga < 0;
-    return {
-      nivel: perdeu ? "critico" : "atencao",
-      titulo: "Fato novo: voo atrasado " + st.atraso + " min",
-      texto: "Pronto no Hall 7 às " + novo + " em vez de " + plano.pronto_sabado + ". " +
-        (perdeu ? "A sessão de abertura das 13:00 está perdida por " + U.fmtDur(-folga) +
-          ". A reunião com o Étienne às 16:00 continua de pé." : "Ainda dá, com " + U.fmtDur(folga) + " de folga.")
-    };
-  }
   function alertasDoDia(dia) {
-    var arr = plano.alertas.filter(function (a) { return diaDoAlerta(a) === dia; });
-    var at = dia === "2026-10-17" ? alertaAtraso() : null;
-    return at ? [at].concat(arr) : arr;
+    return plano.alertas.filter(function (a) { return diaDoAlerta(a) === dia; });
   }
   var PESO = { critico: 3, atencao: 2, info: 1 };
 
@@ -204,13 +229,58 @@
   //                        RENDER
   // ============================================================
   function render() {
-    plano = A.planejar(st.escolhas);
+    var fato = fatoVigente();
+    erroFato = null;
+    try { plano = A.planejar(st.escolhas, fato); }
+    catch (e) {
+      erroFato = (fatoDoArquivo() ? "fatos/ativo.js: " : "") + e.message;
+      if (!fatoDoArquivo()) { st.fato = null; salvarFato(); }
+      fato = null;
+      plano = A.planejar(st.escolhas);
+    }
+    planoBase = fato ? A.planejar(st.escolhas) : null;
+    diff = fato ? A.diffRoteiro(planoBase, plano) : null;
+    marcas = {};
+    if (diff) {
+      diff.compromissos.entrou.forEach(function (i) { marcas[i.chave] = "novo"; });
+      diff.compromissos.mudou.forEach(function (x) { marcas[x.depois.chave] = "mudou"; });
+    }
+    if (!plano.dias.some(function (d) { return d.data === st.dia; })) st.dia = "2026-10-17";
+    barraFato();
     topo();
     roteiro();
     inbox();
     custos();
     fontes();
     navBadge();
+  }
+
+  // faixa no topo enquanto houver fato novo (ou erro ao aplicar um)
+  function barraFato() {
+    var el = $("factBar"), f = fatoVigente() && !erroFato ? fatoVigente() : null;
+    if (erroFato) {
+      el.hidden = false; el.className = "factbar err";
+      el.innerHTML = '<button data-rel="1">' + ICON("alert", 18) + "<span><b>Fato novo não aplicado</b>" + esc(erroFato) + "</span>" + ICON("chevR", 16) + "</button>";
+      altura();
+      return;
+    }
+    if (!f) { el.hidden = true; el.innerHTML = ""; altura(); return; }
+    var n = diff ? diff.compromissos.entrou.length + diff.compromissos.mudou.length + diff.compromissos.saiu.length : 0;
+    var q = plano.guardas.filter(function (g) {
+      var a = planoBase.guardas.filter(function (x) { return x.id === g.id; })[0];
+      return !g.ok && a && a.ok;
+    }).length;
+    el.hidden = false; el.className = "factbar" + (q ? " brk" : "");
+    el.innerHTML = '<button data-rel="1">' + ICON("zap", 18) + "<span><b>Fato novo" + (fatoDoArquivo() ? " · fatos/ativo.js" : "") + "</b>" +
+      esc(f.fato_novo || "sem descrição") + "<i>" + n + " compromisso" + (n === 1 ? "" : "s") + (n === 1 ? " mudou" : " mudaram") +
+      (q ? " · quebrou " + q + " trava" + (q > 1 ? "s" : "") : " · nenhuma trava quebrou") + " · ver o que mudou</i></span>" + ICON("chevR", 16) + "</button>";
+    altura();
+  }
+
+  // os elementos sticky abaixo do cabeçalho precisam saber quanto ele cresceu
+  function altura() {
+    var el = $("factBar");
+    document.documentElement.style.setProperty("--fact-h", (el.hidden ? 0 : el.offsetHeight) + "px");
   }
 
   function topo() {
@@ -309,6 +379,9 @@
         '<span class="hero-meta"><b class="tnum">' + esc(prox.inicio) + "</b>" + (prox.local ? " · " + esc(prox.local) : "") + "</span>" +
         (prox.participantes && prox.participantes.length ? '<span class="hero-meta">' + ICON("users", 15) + " " + esc(prox.participantes.join(", ")) + "</span>" : "") +
         "</button>" + saida;
+      var destino = prox.mapa || (tr && tr.mapa);
+      if (destino) h2 += '<div class="hero-acts">' + linkExt(A.linkRota(destino, tr ? tr.modo : "driving"), "Como chegar", "pin", "hero-go",
+        "Como chegar a " + (prox.local || prox.titulo)) + "</div>";
     }
     if (!cur && !prox) h2 += '<p class="hero-big">Nada mais hoje</p>';
     return h2 + "</div>";
@@ -339,7 +412,8 @@
   function linha(i, agoraAqui) {
     if (i.tipo === "deslocamento") return linhaMove(i, agoraAqui);
     var t = TIPO[i.tipo] || TIPO.livre;
-    var h = '<div class="row ev t-' + i.tipo + (agoraAqui ? " now" : "") + '" id="it-' + i.id + '">';
+    var marca = marcas[i.chave];
+    var h = '<div class="row ev t-' + i.tipo + (agoraAqui ? " now" : "") + (marca ? " chg" : "") + '" id="it-' + i.id + '">';
     h += '<div class="tcol"><b class="tnum">' + esc(i.inicio) + "</b>" +
       (i.fim && i.tipo !== "voo" ? '<i class="tnum">' + esc(i.fim) + "</i>" : "") + "</div>";
     h += '<div class="rail"><span class="node"></span></div>';
@@ -348,6 +422,7 @@
     else {
       h += '<div class="ev-top">' + ICON(t[0], 16) + "<span>" + t[1] + "</span>" +
         (agoraAqui ? '<span class="now-tag">agora</span>' : "") +
+        (marca ? '<span class="chg-tag ' + marca + '">' + marca + "</span>" : "") +
         (i.fim ? '<em class="tnum">até ' + esc(i.fim) + "</em>" : "") + "</div>";
       h += "<h3>" + esc(seta(i.titulo)) + "</h3>";
       if (i.local) h += '<p class="ev-loc">' + ICON("pin", 15) + "<span>" + esc(i.local) + "</span></p>";
@@ -364,12 +439,18 @@
     }
     var dec = (i.decisoes || []).map(A.decisao).filter(function (d) { return d && d.modo === "aberta"; })[0];
     var temFonte = (i.fontes && i.fontes.length) || (i.decisoes && i.decisoes.length);
+    // preço de hoje para o que foi cotado (voo e hotel e restaurante); o plano segue com o valor do corpus
+    var preco = "";
+    if (i.tipo === "voo") preco = linkPrecoHtml(plano.voo.id, "Tarifa de hoje");
+    else if (i.ref && /^(HOT|RES)-/.test(i.ref)) preco = linkPrecoHtml(i.ref, /^HOT-/.test(i.ref) ? "Diária de hoje" : "Horários e reserva");
     if (dec) h += '<button class="dec-chip" data-dec="' + dec.id + '">' + ICON("inbox", 15) + "<span>Decisão: " + esc(dec.titulo) + "</span>" + ICON("chevR", 15) + "</button>";
-    if (temFonte || longa) {
+    var mapa = i.mapa ? linkExt(A.linkMapa(i.mapa), "Mapa", "pin", "map", "Abrir no mapa: " + (i.local || i.titulo)) : "";
+    if (temFonte || longa || mapa || preco) {
       h += '<div class="ev-foot">';
       if (longa) h += '<button class="more" data-more="' + i.id + '">' + (st.notas[i.id] ? "ver menos" : "ver mais") + "</button>";
+      h += '<span class="acts">' + mapa + preco;
       if (temFonte) h += '<button class="src" data-src="' + i.id + '">' + ICON("book", 14) + "fontes</button>";
-      h += "</div>";
+      h += "</span></div>";
     }
     return h + "</div></div>";
   }
@@ -383,8 +464,7 @@
       cod = (v.ida || "").split(" ")[0];
     } else {
       de = v.chega_em; para = "GRU"; sai = v.partida_volta.slice(11, 16);
-      var m2 = /GRU\s+(\d{2}:\d{2})(\(\+1\))?/.exec(v.volta || "");
-      chega = m2 ? m2[1] + (m2[2] ? " +1" : "") : "";
+      chega = v.chegada_volta ? v.chegada_volta.slice(11, 16) + (v.chegada_volta.slice(0, 10) > v.partida_volta.slice(0, 10) ? " +1" : "") : "";
       cod = ((v.volta || "").match(/[A-Z]{2}-\d+/) || [v.companhia])[0];
       via = via.reverse();
     }
@@ -423,6 +503,9 @@
           return '<span style="flex:' + c.minutos + ";background:" + tom(k, comp.length) + '" title="' + esc(c.rotulo + ": " + c.minutos + " min") + '"></span>';
         }).join("") + '</div><b class="tnum">' + U.fmtDur(total) + "</b></div>";
     }
+    var rota = i.mapa ? linkExt(A.linkRota(i.mapa, i.modo), "Rota", "pin", "map", "Rota até " + seta(i.titulo).split(" → ").pop()) : "";
+    var trem = i.link_preco ? linkPrecoHtml(i.link_preco, "Horários e tarifa") : "";
+    if (rota || trem) h += '<div class="mv-acts">' + rota + trem + "</div>";
     if (aberto && comp.length) {
       h += '<ul class="mv-parts">' + comp.map(function (c, k) {
         return '<li><span class="sw" style="background:' + (longo ? tom(k, comp.length) : "var(--brand)") + '"></span><span>' +
@@ -494,7 +577,7 @@
 
   function optBtn(d, o) {
     var atual = st.escolhas[d.chave] === o.valor;
-    var h = '<button class="opt' + (atual ? " on" : "") + '" data-set="' + d.chave + '" data-val="' + esc(o.valor) + '" aria-pressed="' + atual + '">';
+    var h = '<div class="opt-w"><button class="opt' + (atual ? " on" : "") + '" data-set="' + d.chave + '" data-val="' + esc(o.valor) + '" aria-pressed="' + atual + '">';
     h += '<div class="opt-h"><b>' + cod(esc(o.rotulo)) + "</b>";
     if (o.recomendada) h += '<span class="rec">recomendado</span>';
     h += '<span class="opt-ck">' + ICON("check", 16) + "</span></div>";
@@ -508,7 +591,14 @@
         o.guardas.map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("") + "</ul></div>";
     }
     h += impacto(d, o);
-    return h + "</button>";
+    h += "</button>";
+    var lp = o.ref && A.linkPreco(o.ref);
+    if (lp) {
+      h += '<div class="opt-live">' + (lp.valor_corpus != null ? "<span>Corpus: <b class=\"tnum\">" + eur(lp.valor_corpus) + "</b> " + esc(lp.unidade || "") + "</span>" : "<span>Disponibilidade e horário</span>") +
+        linkExt(lp.url, "Ver agora", "wallet", "live", lp.rotulo + ": " + o.rotulo) + "</div>";
+      if (/^VOO-/.test(o.ref)) h += '<p class="opt-rule">O plano usa o valor do corpus, como manda a regra do desafio. O link é a checagem de hoje.</p>';
+    }
+    return h + "</div>";
   }
 
   // o que muda se essa opcao for escolhida: itens tocados + delta de custo + travas
@@ -517,7 +607,8 @@
     var base = plano;
     var hip = {}; for (var k in st.escolhas) hip[k] = st.escolhas[k];
     hip[d.chave] = o.valor;
-    var p2 = A.planejar(hip);
+    var p2;
+    try { p2 = A.planejar(hip, fatoVigente()); } catch (e) { return ""; }
 
     var a = {}; base.itens.forEach(function (i) { a[i.dia + i.inicio + i.titulo] = 1; });
     var mudou = p2.itens.filter(function (i) { return !a[i.dia + i.inicio + i.titulo]; }).length;
@@ -583,13 +674,17 @@
     $("costLines").innerHTML = c.categorias.map(function (cat) {
       return '<details class="card grp"><summary><span class="sw" style="background:' + corCat(cat.nome) + '"></span>' +
         "<b>" + esc(cat.nome) + '</b><u class="tnum">' + eur(cat.total) + "</u>" + ICON("chevD", 16) + "</summary>" +
-        cat.itens.map(function (l) {
+        cat.itens.map(function (l, k) {
+          var ref = k === 0 && cat.nome === "Voo" ? plano.voo.id : k === 0 && cat.nome === "Hospedagem" ? plano.hotel.id : null;
           return '<div class="line"><span>' + esc(l.rotulo) +
             (l.nota ? "<small>" + esc(l.nota) + "</small>" : "") +
             (l.estimado ? '<span class="est">estimado</span>' : "") +
+            (ref ? linkPrecoHtml(ref, ref === plano.voo.id ? "Tarifa de hoje" : "Diária de hoje") : "") +
             '</span><u class="tnum">' + eur(l.eur) + "</u></div>";
         }).join("") + "</details>";
-    }).join("");
+    }).join("") +
+      '<p class="hint rule">' + ICON("info", 15) + "<span>Os valores são os do corpus, que manda em preço pela regra do desafio. " +
+      "Os links “de hoje” abrem a mesma busca ao vivo, para conferir.</span></p>";
 
     var ht = plano.hotel, teto = A.politica.hotel_teto_eur, dentro = ht.diaria_eur <= teto;
     $("policyBox").innerHTML =
@@ -616,8 +711,9 @@
       });
       combos = novo;
     });
+    var f = fatoVigente();
     return combos.map(function (c) {
-      var p = A.planejar(c);
+      var p = A.planejar(c, f);
       return { c: c, total: p.custos.total, ok: p.guardas_ok, n: p.guardas.length, p: p };
     }).sort(function (a, b) { return a.total - b.total; });
   }
@@ -645,7 +741,7 @@
     var out = $("budgetOut");
     var todas = todasCombinacoes();
     var limpas = todas.filter(function (r) { return r.ok === r.n; });
-    var base = A.planejar({});
+    var base = A.planejar({}, fatoVigente());
     var maisBarataLimpa = limpas[0];
     var nTravas = base.guardas.length;
 
@@ -817,12 +913,15 @@
     abrirSheet("De onde veio", h || '<p class="hint">Sem fonte registrada.</p>');
   }
 
+  var EXEMPLO_FATO = '{"fato_novo":"O Étienne remarcou a reunião de sábado para as 14:00.","mudar":[{"em":"compromissos","id":"C-04","inicio":"14:00","fim":"15:00"}]}';
+
   function sheetFato() {
-    var h = '<p class="hint" style="margin-top:0">Injete um fato e veja o plano reagir. ' +
-      "Nada aqui é desfeito sozinho: o que você aplicar fica, e o Roteiro reflete na hora.</p>";
+    var h = '<p class="hint" style="margin-top:0">Injete um fato e veja o plano reagir. O motor refaz o roteiro com o fato ' +
+      "e compara com o plano sem ele. Um fato novo substitui o anterior.</p>";
+    if (fatoDoArquivo()) h += '<div class="note-box">' + ICON("info", 16) + "<span>Há um fato em <code>fatos/ativo.js</code>, e ele vale até o arquivo voltar a <code>null</code>.</span></div>";
     var F = [
       ["af", "plane", "Air France cancelou o voo de 17/10", "a greve de 17 a 21 se confirmou na transportadora francesa"],
-      ["atraso90", "clock", "O voo vai atrasar 90 min", "recalcula a folga da sessão de abertura"],
+      ["atraso90", "clock", "O voo vai atrasar 90 min", "o sábado inteiro se refaz a partir do novo pouso"],
       ["atraso30", "clock", "O voo vai atrasar 30 min", "o caso de limite"],
       ["orc", "wallet", "O orçamento caiu 20%", "acha a combinação mais barata que ainda passa nas travas"],
       ["zerar", "undo", "Limpar os fatos novos", "volta ao plano recomendado"]
@@ -831,71 +930,130 @@
       return '<button class="fact-b" data-fato="' + f[0] + '"><span class="fact-i">' + ICON(f[1], 18) + "</span>" +
         "<span><b>" + f[2] + "</b><span>" + f[3] + "</span></span>" + ICON("chevR", 16) + "</button>";
     }).join("");
-    h += '<div id="deltaOut"></div>';
+
+    h += '<div class="fact-own"><label for="fatoTxt"><b>Fato personalizado</b><span>Cole um JSON. ' +
+      "<code>em</code>: compromissos, agendados, voos, hoteis, restaurantes, contatos, sessoes, politica. " +
+      "Use <code>mudar</code>, <code>incluir</code> ou <code>remover</code>.</span></label>" +
+      '<textarea id="fatoTxt" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">' + esc(EXEMPLO_FATO) + "</textarea>" +
+      '<p class="fato-err" id="fatoErr" role="alert" hidden></p>' +
+      '<div class="btn-row" style="margin-top:8px"><button class="btn" id="fatoGo">Aplicar</button></div>' +
+      '<details class="ids"><summary>Ids que você pode usar' + ICON("chevD", 16) + "</summary>" + listaIds() + "</details></div>";
+    h += '<div id="deltaOut">' + relatorioHtml() + "</div>";
     abrirSheet("Fato novo", h);
   }
 
-  // aplica o fato e descreve preservado / mudou / quebrou
-  function aplicarFato(tipo) {
-    var antes = A.planejar(st.escolhas), antesAtraso = st.atraso;
-    var titulo = "", nota = "";
-
-    if (tipo === "af") {
-      st.escolhas.voo = "VOO-B"; salvar();
-      titulo = "Air France cancelada";
-      nota = "Troquei para a LATAM LA-8022, que não está no aviso de greve.";
-    } else if (tipo === "atraso90") {
-      st.atraso = 90; titulo = "Atraso de 90 min"; st.dia = "2026-10-17";
-    } else if (tipo === "atraso30") {
-      st.atraso = 30; titulo = "Atraso de 30 min"; st.dia = "2026-10-17";
-    } else if (tipo === "orc") {
-      st.orcamento = Math.round(antes.custos.total * 0.8);
-      titulo = "Orçamento reduzido para " + eur(st.orcamento);
-      nota = "O resultado está na aba Custos, em Modo orçamento.";
-    } else if (tipo === "zerar") {
-      st.escolhas = {}; st.atraso = 0; st.orcamento = null; salvar();
-      titulo = "Fatos limpos";
+  function listaIds() {
+    function linhaId(x, em) {
+      return "<li><code>" + esc(x.id) + "</code><span>" + esc(em) + " · " + (x.dia ? dd(x.dia) : "") + (x.inicio ? " " + esc(x.inicio) : "") +
+        "</span><b>" + esc(x.titulo || "") + "</b></li>";
     }
-
-    render();
-    var depois = plano;
-    var manteve = [], mudou = [], quebrou = [];
-    A.decisoes.filter(function (d) { return d.modo === "aberta"; }).forEach(function (d) {
-      if (antes.escolhas[d.chave] === depois.escolhas[d.chave]) manteve.push(d.titulo);
-      else {
-        var de = d.opcoes.filter(function (o) { return o.valor === antes.escolhas[d.chave]; })[0] || {};
-        var pa = d.opcoes.filter(function (o) { return o.valor === depois.escolhas[d.chave]; })[0] || {};
-        mudou.push(d.titulo + ": " + (de.rotulo || "?") + " → " + (pa.rotulo || "?"));
-      }
+    var c = A.compromissos.filter(function (x) { return x.inicio; }).map(function (x) { return linhaId(x, "compromissos"); });
+    var a = (A.agendados || []).map(function (x) { return linhaId(x, "agendados"); });
+    var cat = A.catalogo.voos.concat(A.catalogo.hoteis, A.catalogo.restaurantes).map(function (x) {
+      var em = /^VOO/.test(x.id) ? "voos" : /^HOT/.test(x.id) ? "hoteis" : "restaurantes";
+      return "<li><code>" + esc(x.id) + "</code><span>" + em + "</span><b>" + esc(x.companhia || x.nome) + "</b></li>";
     });
-    if (antes.custos.total !== depois.custos.total) {
-      mudou.push("Custo total: " + eur(antes.custos.total) + " → " + eur(depois.custos.total));
-    }
-    depois.guardas.forEach(function (g) {
-      var a = antes.guardas.filter(function (x) { return x.id === g.id; })[0];
+    return '<ul class="id-list">' + c.concat(a, cat).join("") + "</ul>" +
+      '<p class="hint" style="margin:8px 0 0">Dia em <code>AAAA-MM-DD</code> (de ' + dd(INICIO) + " a " + dd(FIM) + "), hora em <code>HH:MM</code>.</p>";
+  }
+
+  // o que mudou entre o plano sem o fato e o plano com ele, em português
+  function relatorioHtml() {
+    var f = fatoVigente();
+    if (!f || !planoBase || erroFato) return "";
+    var quebrou = [], mudou = [];
+    plano.guardas.forEach(function (g) {
+      var a = planoBase.guardas.filter(function (x) { return x.id === g.id; })[0];
       if (a && a.ok && !g.ok) quebrou.push(g.titulo + " — " + g.detalhe);
     });
-    if (st.atraso !== antesAtraso && st.atraso) {
-      var folga = depois.folga_abertura_min - st.atraso;
-      if (folga < 0) quebrou.push("Sessão de abertura das 13:00 — perdida por " + U.fmtDur(-folga) +
-        " (pronto às " + U.hm(U.m(depois.pronto_sabado) + st.atraso) + ")");
-      else manteve.push("Sessão de abertura ainda de pé, com " + U.fmtDur(folga) + " de folga");
-    }
+    var abertas = A.decisoes.filter(function (d) { return d.modo === "aberta"; }), decIguais = 0;
+    abertas.forEach(function (d) {
+      var de = planoBase.escolhas[d.chave], pa = plano.escolhas[d.chave];
+      if (de === pa) { decIguais++; return; }
+      var o1 = d.opcoes.filter(function (o) { return o.valor === de; })[0] || {};
+      var o2 = d.opcoes.filter(function (o) { return o.valor === pa; })[0] || {};
+      mudou.push(d.titulo + ": " + (o1.rotulo || de) + " → " + (o2.rotulo || pa));
+    });
+    diff.compromissos.mudou.forEach(function (x) {
+      var a = x.antes, b = x.depois, partes = [];
+      if (x.campos.indexOf("inicio") >= 0 || x.campos.indexOf("fim") >= 0 || x.campos.indexOf("dia") >= 0)
+        partes.push((a.dia !== b.dia ? dd(a.dia) + " " : "") + a.inicio + " → " + (a.dia !== b.dia ? dd(b.dia) + " " : "") + b.inicio);
+      if (x.campos.indexOf("local") >= 0) partes.push("local agora " + b.local);
+      if (x.campos.indexOf("titulo") >= 0) partes.push("agora " + seta(b.titulo));
+      mudou.push(seta(a.titulo) + ": " + partes.join("; "));
+    });
+    diff.compromissos.entrou.forEach(function (i) { mudou.push("Entrou: " + seta(i.titulo) + " (" + dd(i.dia) + " " + i.inicio + ")"); });
+    diff.compromissos.saiu.forEach(function (i) { mudou.push("Saiu: " + seta(i.titulo) + " (" + dd(i.dia) + " " + i.inicio + ")"); });
+    if (planoBase.custos.total !== plano.custos.total) mudou.push("Custo total: " + eur(planoBase.custos.total) + " → " + eur(plano.custos.total));
 
-    var out = $("deltaOut");
-    if (!out) return;
-    var h = '<div class="delta"><div class="delta-hd"><b>' + esc(titulo) + "</b>" +
-      (nota ? "<p>" + esc(nota) + "</p>" : "") + "</div>";
-    if (quebrou.length) h += grupo("brk", "Quebrou", quebrou);
+    var rel = function (i) { return ["voo", "reuniao", "sessao", "refeicao", "hospedagem"].indexOf(i.tipo) >= 0 && !i.flex; };
+    var nComp = plano.itens.filter(rel).length;
+    var nMud = diff.compromissos.mudou.length + diff.compromissos.entrou.length;
+    var nAuto = A.decisoes.filter(function (d) { return d.modo === "auto"; }).length;
+    var manteve = [
+      (nComp - nMud) + " de " + nComp + " compromissos no mesmo dia, hora e lugar",
+      decIguais + " de " + abertas.length + " escolhas do Inbox iguais, e as " + nAuto + " decisões automáticas",
+      plano.guardas_ok + " de " + plano.guardas.length + " travas passando"
+    ];
+
+    var h = '<div class="delta"><div class="delta-hd"><b>' + esc(f.fato_novo || "Fato novo") + "</b>" +
+      "<p>Comparado com o mesmo plano sem esse fato" + (fatoDoArquivo() ? ", lido de fatos/ativo.js" : "") + ".</p></div>";
+    h += grupo("brk", "Quebrou", quebrou.length ? quebrou : ["Nada. Nenhuma trava que passava deixou de passar."]);
     if (mudou.length) h += grupo("chg", "Mudou", mudou);
-    h += grupo("keep", "Continua de pé (" + manteve.length + ")", manteve);
-    out.innerHTML = h + "</div>";
-    if (out.scrollIntoView) out.scrollIntoView({ block: "start", behavior: "smooth" });
+    h += grupo("keep", "Continua de pé", manteve);
+    return h + "</div>";
 
     function grupo(cls, lbl, arr) {
       return '<div class="delta-g ' + cls + '"><b>' + lbl + "</b><ul>" +
         arr.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></div>";
     }
+  }
+
+  function mostrarRelatorio(extra) {
+    var out = $("deltaOut");
+    if (!out) return;
+    out.innerHTML = (extra || "") + relatorioHtml();
+    if (out.firstChild && out.scrollIntoView) out.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+  function definirFato(f) {
+    st.fato = f; salvarFato(); render(); mostrarRelatorio();
+  }
+  function avisoSimples(titulo, nota) {
+    return '<div class="delta"><div class="delta-hd"><b>' + esc(titulo) + "</b>" + (nota ? "<p>" + esc(nota) + "</p>" : "") + "</div></div>";
+  }
+
+  function aplicarFato(tipo) {
+    if (tipo === "af") {
+      definirFato({ fato_novo: "A greve se confirmou e a Air France cancelou o AF-0459 do dia 17/10. Troquei para a LATAM LA-8022, que não está no aviso.",
+                    escolhas: { voo: "VOO-B" } });
+    } else if (tipo === "atraso90" || tipo === "atraso30") {
+      st.dia = "2026-10-17";
+      definirFato(A.fatoAtraso(tipo === "atraso90" ? 90 : 30, st.escolhas));
+    } else if (tipo === "orc") {
+      st.orcamento = Math.round(plano.custos.total * 0.8);
+      render();
+      mostrarRelatorio(avisoSimples("Orçamento reduzido para " + eur(st.orcamento), "O resultado está na aba Custos, em Modo orçamento."));
+    } else if (tipo === "zerar") {
+      st.escolhas = {}; st.fato = null; st.orcamento = null; salvar(); salvarFato();
+      render();
+      mostrarRelatorio(avisoSimples("Fatos limpos", fatoDoArquivo()
+        ? "O plano voltou ao recomendado, mas o fato de fatos/ativo.js continua valendo até o arquivo voltar a null."
+        : "O plano voltou ao recomendado."));
+    }
+  }
+
+  function aplicarFatoTexto() {
+    var err = $("fatoErr"), f;
+    function erro(m) { err.hidden = false; err.textContent = m; }
+    err.hidden = true;
+    try { f = JSON.parse($("fatoTxt").value); }
+    catch (e) { return erro("JSON inválido: " + e.message); }
+    if (!f || typeof f !== "object" || Array.isArray(f)) return erro("O fato precisa ser um objeto JSON, entre chaves.");
+    if (!f.mudar && !f.incluir && !f.remover && !f.escolhas) return erro("O fato não muda nada: use mudar, incluir, remover ou escolhas.");
+    if (!f.fato_novo) f.fato_novo = "Fato novo sem descrição";
+    try { A.planejar(st.escolhas, f); }
+    catch (e) { return erro(e.message); }
+    definirFato(f);
   }
 
   // ---------------- navegacao ----------------
@@ -921,14 +1079,15 @@
   // ---------------- eventos ----------------
   document.addEventListener("click", function (ev) {
     if (ev.target.closest("#sheetX") || ev.target.id === "sheetBg") { fecharSheet(); return; }
-    if (ev.target.closest("#factBtn")) { sheetFato(); return; }
+    if (ev.target.closest("#factBtn") || ev.target.closest("[data-rel]")) { sheetFato(); return; }
+    if (ev.target.closest("#fatoGo")) { aplicarFatoTexto(); return; }
     if (ev.target.closest("#healthBtn")) {
       st.seg = "travas"; fontes(); go("fontes");
       var ruim = plano.guardas.filter(function (g) { return !g.ok; })[0];
       setTimeout(function () { rolarPara($(ruim ? "g-" + ruim.id : "guards"), !!ruim); }, 60);
       return;
     }
-    if (ev.target.closest("#resetAll")) { st.escolhas = {}; st.atraso = 0; st.orcamento = null; salvar(); render(); return; }
+    if (ev.target.closest("#resetAll")) { st.escolhas = {}; st.orcamento = null; salvar(); render(); return; }
     if (ev.target.id === "budgetGo") {
       var v = parseInt($("budgetIn").value, 10);
       if (v > 0) { st.orcamento = v; orcamento(v); }
@@ -1003,5 +1162,7 @@
   $("factBtn").innerHTML = ICON("zap", 20) + '<span class="sr">Fato novo</span>';
   $("sheetX").innerHTML = ICON("x", 20);
   render();
+  // durante a viagem abre no dia de hoje; fora dela, no sábado, que é onde a viagem acontece de fato
+  if (faseDe(agora) === "durante" && agora.dia >= INICIO && agora.dia <= FIM) { st.dia = agora.dia; roteiro(); }
   go("roteiro");
 })();

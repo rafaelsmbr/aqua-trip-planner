@@ -1,17 +1,17 @@
 {
   "meta": {
     "candidato": "Rafael Mendonça",
-    "gerado_em": "2026-10-03T01:52:29+00:00",
+    "gerado_em": "2026-10-03T03:02:13+00:00",
     "rodada": "primeira",
     "modelo_usado": "Nenhum em tempo de execução: o motor é determinístico (engine.js). O julgamento foi feito na curadoria do corpus e no catálogo de decisões, com Claude Code.",
-    "notas": "Plano gerado por cli/plano.js. Travas: 16/16. Escolhas: {\"voo\":\"VOO-D\",\"jantar_sabado\":\"livre\",\"claire\":\"cafe_curto\",\"almoco_sofia\":\"arpege\",\"lille\":\"manter\",\"jantar_terca\":\"le_duc\"}."
+    "notas": "Plano gerado por cli/plano.js. Travas: 18/18. Escolhas: {\"voo\":\"VOO-D\",\"jantar_sabado\":\"livre\",\"claire\":\"cafe_curto\",\"almoco_sofia\":\"arpege\",\"lille\":\"manter\",\"jantar_terca\":\"le_duc\"}."
   },
   "decisoes": [
     {
       "id": "D-001",
       "titulo": "Qual voo emitir para Paris",
       "escolha": "Air France AF-0459 (direto, pousa 10:30 - EUR 2.610)",
-      "justificativa": "Os dois caminhos se defendem e o que está em jogo é o que você disse que mais importa: estar na sessão de abertura. Não dá para decidir isso no seu lugar. Escolha vigente: Air France AF-0459. A favor: Acumula Flying Blue, e você faz questão; Único com folga real (25 min) para a sessão das 13:00; Direto: sem risco de conexão perdida; Volta 18:55 e a que já está na sua agenda. Contra: Air France está nominalmente no aviso de greve de 17 a 21/10; Se cancelar, você perde o sábado inteiro; EUR 490 mais caro que a LATAM.",
+      "justificativa": "Os dois caminhos se defendem e o que está em jogo é o que você disse que mais importa: estar na sessão de abertura. Não dá para decidir isso no seu lugar. Escolha vigente: Air France AF-0459. A favor: Acumula Flying Blue, e você faz questão; Único com folga real (25 min) para a sessão das 13:00; Direto: sem risco de conexão perdida; Volta 18:55 é a que já está na sua agenda. Contra: Air France está nominalmente no aviso de greve de 17 a 21/10; Se cancelar, você perde o sábado inteiro; EUR 490 mais caro que a LATAM.",
       "restricoes": [
         "R-001",
         "R-002",
@@ -62,17 +62,13 @@
       "alternativas_descartadas": [
         {
           "opcao": "Jantar de trabalho",
-          "motivo": "Não escolhida. Contra: Clamato e ruidoso e não aceita reserva, contra o que você já disse duas vezes; Le Duc está indisponível exatamente no sábado 17 (evento privado); Seria o terceiro jantar de trabalho, e você pediu dois"
+          "motivo": "Não escolhida. Contra: Clamato é ruidoso e não aceita reserva, contra o que você já disse duas vezes; Le Duc está indisponível exatamente no sábado 17 (evento privado); Seria o terceiro jantar de trabalho, e você pediu dois"
         }
       ],
       "selecao": {
         "catalogo": "restaurantes",
         "id": "RES-06"
-      },
-      "incertezas": [
-        "U-002",
-        "U-003"
-      ]
+      }
     },
     {
       "id": "D-003",
@@ -98,7 +94,7 @@
       "id": "D-004",
       "titulo": "Onde almoçar com a Sofia Marchetti",
       "escolha": "L'Arpège, 7e (cozinha vegetal - EUR ~420 para dois)",
-      "justificativa": "A Sofia e vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo. Escolha vigente: L'Arpège, 7e. A favor: Cozinha vegetal: a anfitriã come bem, sem adaptação; Ambiente silencioso, dá para conversar; Você já fica em Paris para o jantar do time a noite. Contra: 45 min de carro em cada sentido; EUR ~420 para dois pressiona o 'bom senso' da política; No mundo real a casa fecha no domingo (ver divergência V-003).",
+      "justificativa": "A Sofia é vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo. Escolha vigente: L'Arpège, 7e. A favor: Cozinha vegetal: a anfitriã come bem, sem adaptação; Ambiente silencioso, dá para conversar; Você já fica em Paris para o jantar do time a noite. Contra: 45 min de carro em cada sentido; EUR ~420 para dois pressiona o 'bom senso' da política; No mundo real a casa fecha no domingo (ver divergência V-003).",
       "restricoes": [
         "R-004",
         "R-011"
@@ -165,11 +161,7 @@
       "selecao": {
         "catalogo": "restaurantes",
         "id": "RES-01"
-      },
-      "incertezas": [
-        "U-002",
-        "U-003"
-      ]
+      }
     },
     {
       "id": "D-010",
@@ -284,7 +276,7 @@
       "id": "D-015",
       "titulo": "Jantar do time no Le Duc",
       "escolha": "RES-01",
-      "justificativa": "E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc e a única que atende peixe em ambiente reservado. Clamato e ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.",
+      "justificativa": "E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc é a única que atende peixe em ambiente reservado. Clamato é ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.",
       "restricoes": [
         "R-006",
         "R-012"
@@ -312,11 +304,7 @@
       "selecao": {
         "catalogo": "restaurantes",
         "id": "RES-01"
-      },
-      "incertezas": [
-        "U-002",
-        "U-003"
-      ]
+      }
     },
     {
       "id": "D-016",
@@ -630,6 +618,18 @@
       "tipo": "web",
       "referencia": "https://flightqueue.com/how-early-to-arrive-at-charles-de-gaulle-airport",
       "consultado_em": "2026-10-02T10:15:00-03:00"
+    },
+    {
+      "id": "F-041",
+      "tipo": "suposicao",
+      "referencia": "Estimativa própria: câmbio de R$ 6,20 por euro para converter custos em reais",
+      "consultado_em": "2026-10-02T21:00:00-03:00"
+    },
+    {
+      "id": "F-042",
+      "tipo": "suposicao",
+      "referencia": "Estimativa própria: GRU até o centro de São Paulo de carro no início da manhã, 45 a 60 min",
+      "consultado_em": "2026-10-02T21:00:00-03:00"
     },
     {
       "id": "F-022",
@@ -1075,13 +1075,27 @@
       "trecho": "Estimativa nossa, não medida: 2h05 de antecedência em GRU para voo intercontinental em executiva com Flying Blue Platinum (fila prioritária de check-in e de segurança). O plano usa essa folga na sexta.",
       "endereco": "estimativa própria (não é fonte externa)",
       "acessado_em": "2026-10-02T10:15:00-03:00"
+    },
+    {
+      "id": "E-058",
+      "fonte": "F-041",
+      "trecho": "Estimativa nossa, não medida: custos em reais convertidos a R$ 6,20 por euro. Um carro do escritório até GRU, cerca de R$ 210, vira EUR 35.",
+      "endereco": "estimativa própria (não é fonte externa)",
+      "acessado_em": "2026-10-02T21:00:00-03:00"
+    },
+    {
+      "id": "E-059",
+      "fonte": "F-042",
+      "trecho": "Estimativa nossa, não medida: de GRU ao centro de São Paulo, carro no início da manhã de quinta, 45 a 60 min. O plano usa 50. O endereço de destino (casa ou escritório) não está no corpus.",
+      "endereco": "estimativa própria (não é fonte externa)",
+      "acessado_em": "2026-10-02T21:00:00-03:00"
     }
   ],
   "deslocamentos": [
     {
       "id": "T-001",
       "origem": "São Paulo",
-      "destino": "São Paulo",
+      "destino": "Escritório -> GRU",
       "modal": "carro",
       "partida": "2026-10-16T15:00:00-03:00",
       "duracao_min": 60,
@@ -1091,7 +1105,7 @@
       "id": "T-002",
       "origem": "CDG Terminal 2E",
       "destino": "Paris Nord Villepinte",
-      "modal": "taxiamento",
+      "modal": "credenciamento e caminhada até o Hall 7",
       "partida": "2026-10-17T10:30:00+02:00",
       "duracao_min": 130,
       "fonte": "F-020",
@@ -1110,7 +1124,7 @@
     {
       "id": "T-003",
       "origem": "Paris Nord Villepinte",
-      "destino": "Paris Nord Villepinte",
+      "destino": "Hall 7 -> Hall 5A",
       "modal": "caminhada entre halls",
       "partida": "2026-10-17T15:50:00+02:00",
       "duracao_min": 10,
@@ -1119,7 +1133,7 @@
     {
       "id": "T-004",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Pavilhão -> hotel",
       "modal": "carro",
       "partida": "2026-10-17T17:40:00+02:00",
       "duracao_min": 10,
@@ -1128,7 +1142,7 @@
     {
       "id": "T-005",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Hotel -> pavilhão",
       "modal": "carro",
       "partida": "2026-10-18T09:30:00+02:00",
       "duracao_min": 10,
@@ -1145,8 +1159,8 @@
     },
     {
       "id": "T-007",
-      "origem": "Paris 7e",
-      "destino": "Paris 14e",
+      "origem": "7e -> Le Duc",
+      "destino": "243 boulevard Raspail, 75014 Paris",
       "modal": "carro",
       "partida": "2026-10-18T19:00:00+02:00",
       "duracao_min": 20,
@@ -1154,17 +1168,17 @@
     },
     {
       "id": "T-008",
-      "origem": "Paris 14e",
+      "origem": "Le Duc -> hotel",
       "destino": "Villepinte",
-      "modal": "carro: a partir das 22h45 o RER B interrompe o trecho CDG",
+      "modal": "carro: o RER B interrompe o trecho CDG a partir das 22h45",
       "partida": "2026-10-18T22:00:00+02:00",
-      "duracao_min": 45,
+      "duracao_min": 50,
       "fonte": "F-014"
     },
     {
       "id": "T-009",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Hotel -> pavilhão",
       "modal": "carro",
       "partida": "2026-10-19T09:30:00+02:00",
       "duracao_min": 10,
@@ -1174,7 +1188,7 @@
       "id": "T-010",
       "origem": "Villepinte",
       "destino": "Paris 10e",
-      "modal": "caminhada halls -> estação Parc des Expositions (61 m)",
+      "modal": "RER B",
       "partida": "2026-10-19T11:50:00+02:00",
       "duracao_min": 37,
       "fonte": "F-017"
@@ -1191,7 +1205,7 @@
     {
       "id": "T-012",
       "origem": "Lille",
-      "destino": "Lille",
+      "destino": "Lille Europe -> planta da Coopérative du Nord",
       "modal": "carro (ESTIMADO: o corpus não traz o endereço da planta)",
       "partida": "2026-10-19T14:06:00+02:00",
       "duracao_min": 30,
@@ -1200,7 +1214,7 @@
     {
       "id": "T-013",
       "origem": "Lille",
-      "destino": "Lille",
+      "destino": "Planta -> Lille Europe",
       "modal": "carro (estimado)",
       "partida": "2026-10-19T16:30:00+02:00",
       "duracao_min": 30,
@@ -1227,16 +1241,16 @@
     {
       "id": "T-016",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Hotel -> pavilhão",
       "modal": "carro",
-      "partida": "2026-10-20T09:40:00+02:00",
+      "partida": "2026-10-20T09:30:00+02:00",
       "duracao_min": 10,
       "fonte": "F-013"
     },
     {
       "id": "T-017",
       "origem": "Paris Nord Villepinte",
-      "destino": "Paris Nord Villepinte",
+      "destino": "Caminhada até o Hall 5A",
       "modal": "caminhada entre halls",
       "partida": "2026-10-20T13:45:00+02:00",
       "duracao_min": 15,
@@ -1263,7 +1277,7 @@
     {
       "id": "T-020",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Hotel -> pavilhão",
       "modal": "carro",
       "partida": "2026-10-21T10:30:00+02:00",
       "duracao_min": 10,
@@ -1272,7 +1286,7 @@
     {
       "id": "T-021",
       "origem": "Villepinte",
-      "destino": "Villepinte",
+      "destino": "Pavilhão -> hotel",
       "modal": "carro",
       "partida": "2026-10-21T13:00:00+02:00",
       "duracao_min": 10,
@@ -1286,6 +1300,24 @@
       "partida": "2026-10-21T15:35:00+02:00",
       "duracao_min": 25,
       "fonte": "F-010"
+    },
+    {
+      "id": "T-023",
+      "origem": "GRU",
+      "destino": "São Paulo",
+      "modal": "carro",
+      "partida": "2026-10-22T05:25:00-03:00",
+      "duracao_min": 105,
+      "fonte": "F-042",
+      "buffer": {
+        "componentes": [
+          "taxiamento, desembarque e caminhada (15 min)",
+          "imigração brasileira (cidadão, e-gates) (15 min)",
+          "esteira de bagagem (25 min)",
+          "carro, GRU -> São Paulo no início da manhã (50 min)"
+        ],
+        "total_min": 105
+      }
     }
   ],
   "incertezas": [
@@ -1439,6 +1471,7 @@
   "itinerario": [
     {
       "id": "I-001",
+      "chave": "C-01",
       "inicio": "2026-10-16T09:00:00-03:00",
       "titulo": "Comitê de investimentos",
       "tipo": "reuniao",
@@ -1450,21 +1483,23 @@
     },
     {
       "id": "I-002",
+      "chave": "C-02",
       "inicio": "2026-10-16T14:00:00-03:00",
       "titulo": "Call com fundo LP",
       "tipo": "reuniao",
       "fim": "2026-10-16T15:00:00-03:00",
-      "local": "Remoto",
+      "local": "remoto",
       "decisoes": [
         "D-017"
       ],
       "fontes": [
         "F-002"
       ],
-      "nota": "Horário de Brasília, não de Paris. A secretaria registrou isso em separado porque o resto do dia vira Paris."
+      "nota": "Horário de Brasília, não de Paris. A secretaria registrou isso em separado porque o resto da viagem vira Paris."
     },
     {
       "id": "I-003",
+      "chave": "2026-10-16|deslocamento|escritorio-gru",
       "inicio": "2026-10-16T15:00:00-03:00",
       "titulo": "Escritório -> GRU",
       "tipo": "deslocamento",
@@ -1475,7 +1510,7 @@
       ],
       "componentes": [
         {
-          "rotulo": "carro, escritório ao aeroporto em sexta a tarde",
+          "rotulo": "carro, escritório ao aeroporto em sexta à tarde",
           "minutos": 60
         }
       ],
@@ -1483,10 +1518,12 @@
         "F-022"
       ],
       "de_item": "I-002",
-      "para_item": "I-004"
+      "para_item": "I-004",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Aeroporto%20Internacional%20de%20Guarulhos%2C%20Terminal%203"
     },
     {
       "id": "I-004",
+      "chave": "2026-10-16|livre|gru-despacho-de-bagagem-sala-e-embarque",
       "inicio": "2026-10-16T16:00:00-03:00",
       "titulo": "GRU: despacho de bagagem, sala e embarque",
       "tipo": "livre",
@@ -1499,10 +1536,12 @@
         "F-001",
         "F-022"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Aeroporto%20Internacional%20de%20Guarulhos%2C%20Terminal%203",
       "nota": "Ele sempre despacha. 2h05 de folga antes da partida."
     },
     {
       "id": "I-005",
+      "chave": "voo-ida",
       "inicio": "2026-10-16T18:05:00-03:00",
       "titulo": "Air France AF-0459 GRU -> CDG",
       "tipo": "voo",
@@ -1519,6 +1558,7 @@
     },
     {
       "id": "I-006",
+      "chave": "pouso-cdg",
       "inicio": "2026-10-17T10:30:00+02:00",
       "titulo": "Pouso em CDG -> Hall 7, pronto para a abertura",
       "tipo": "deslocamento",
@@ -1561,10 +1601,12 @@
       ],
       "de_item": "I-006",
       "para_item": "I-007",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "A conta começa no instante do pouso, não na porta do aeroporto. A mala segue com o motorista para o hotel: o check-in do Novotel é às 14:00 e não haveria quarto liberado agora."
     },
     {
       "id": "I-007",
+      "chave": "C-03",
       "inicio": "2026-10-17T13:00:00+02:00",
       "titulo": "SIAL: sessão de abertura - Food intelligence: redefining the value chain",
       "tipo": "sessao",
@@ -1578,37 +1620,43 @@
         "F-002",
         "F-003"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "A sessão que ele disse que interessa de verdade. Todo o sábado foi montado para trás a partir deste horário."
     },
     {
       "id": "I-008",
+      "chave": "2026-10-17|almoco-pav",
       "inicio": "2026-10-17T13:45:00+02:00",
-      "titulo": "Almoço na praça de alimentação e primeira volta pelos halls",
+      "titulo": "Almoço na praça de alimentação",
       "tipo": "refeicao",
       "fim": "2026-10-17T15:00:00+02:00",
       "local": "Paris Nord Villepinte",
       "fontes": [
         "F-003"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "Não há restaurante de serviço completo dentro dos halls, só praça de alimentação e café de feira."
     },
     {
       "id": "I-009",
+      "chave": "2026-10-17|livre|estandes-e-conversas-abertas",
       "inicio": "2026-10-17T15:00:00+02:00",
-      "titulo": "Estandes de sourcing de proteína",
+      "titulo": "Estandes e conversas abertas",
       "tipo": "livre",
       "fim": "2026-10-17T15:50:00+02:00",
-      "local": "Halls 5 e 6",
+      "local": "Paris Nord Villepinte",
       "decisoes": [
         "D-020"
       ],
       "fontes": [
         "F-007"
       ],
-      "nota": "Foco declarado da edição: sourcing de ingredientes e proteína."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
+      "nota": "Foco declarado da edição: sourcing de ingredientes e proteína. Três conversas boas valem mais que vinte apertos de mão."
     },
     {
       "id": "I-010",
+      "chave": "2026-10-17|caminhada-etienne",
       "inicio": "2026-10-17T15:50:00+02:00",
       "titulo": "Hall 7 -> Hall 5A",
       "tipo": "deslocamento",
@@ -1624,12 +1672,14 @@
         "F-011"
       ],
       "de_item": "I-009",
-      "para_item": "I-011"
+      "para_item": "I-011",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-011",
+      "chave": "C-04",
       "inicio": "2026-10-17T16:00:00+02:00",
-      "titulo": "Étienne Prévost (Groupe Vallonne)",
+      "titulo": "Reunião com Étienne Prévost (Groupe Vallonne)",
       "tipo": "reuniao",
       "fim": "2026-10-17T17:00:00+02:00",
       "local": "Estande do grupo, Hall 5A",
@@ -1640,21 +1690,25 @@
         "F-002",
         "F-005"
       ],
-      "nota": "Ele marcou pelo calendário do Groupe Vallonne e o convite chegou em horário de Paris, então 16:00 aqui é 16:00 local mesmo. Conversa de relacionamento e sourcing, não de decisão: é o primeiro meio período depois do voo."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
+      "nota": "Ele marcou pelo calendário do Groupe Vallonne e o convite chegou em horário de Paris, então 16:00 aqui é 16:00 local mesmo. Conversa de relacionamento e sourcing, não de decisão."
     },
     {
       "id": "I-012",
+      "chave": "2026-10-17|livre|estandes-e-conversas-abertas#2",
       "inicio": "2026-10-17T17:00:00+02:00",
-      "titulo": "Volta pelos halls de ingredientes",
+      "titulo": "Estandes e conversas abertas",
       "tipo": "livre",
       "fim": "2026-10-17T17:40:00+02:00",
       "local": "Paris Nord Villepinte",
       "fontes": [
-        "F-003"
-      ]
+        "F-007"
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-013",
+      "chave": "2026-10-17|pav-hotel",
       "inicio": "2026-10-17T17:40:00+02:00",
       "titulo": "Pavilhão -> hotel",
       "tipo": "deslocamento",
@@ -1670,10 +1724,12 @@
         "F-013"
       ],
       "de_item": "I-012",
-      "para_item": "I-014"
+      "para_item": "I-014",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte"
     },
     {
       "id": "I-014",
+      "chave": "check-in",
       "inicio": "2026-10-17T17:50:00+02:00",
       "titulo": "Check-in no Novotel Suites Paris CDG Airport Villepinte",
       "tipo": "hospedagem",
@@ -1688,10 +1744,12 @@
         "F-030",
         "F-036"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
       "nota": "A mala já está na portaria desde o meio-dia."
     },
     {
       "id": "I-015",
+      "chave": "2026-10-17|refeicao|jantar-leve-no-hotel",
       "inicio": "2026-10-17T20:00:00+02:00",
       "titulo": "Jantar leve no hotel",
       "tipo": "refeicao",
@@ -1704,10 +1762,12 @@
       "fontes": [
         "F-031"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
       "nota": "Noite livre depois do voo. Ele dorme mal em voo e pousou hoje."
     },
     {
       "id": "I-016",
+      "chave": "2026-10-18|livre|academia-do-hotel",
       "inicio": "2026-10-18T07:30:00+02:00",
       "titulo": "Academia do hotel",
       "tipo": "livre",
@@ -1719,10 +1779,12 @@
       "fontes": [
         "F-037"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
       "nota": "Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel."
     },
     {
       "id": "I-017",
+      "chave": "2026-10-18|manha-pav",
       "inicio": "2026-10-18T09:30:00+02:00",
       "titulo": "Hotel -> pavilhão",
       "tipo": "deslocamento",
@@ -1738,10 +1800,12 @@
         "F-013"
       ],
       "de_item": "I-016",
-      "para_item": "I-018"
+      "para_item": "I-018",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-018",
+      "chave": "C-06",
       "inicio": "2026-10-18T10:00:00+02:00",
       "titulo": "SIAL: painel de proteínas alternativas",
       "tipo": "sessao",
@@ -1754,21 +1818,25 @@
         "F-003",
         "F-002"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "Escolhido sobre o painel de rastreabilidade das 10:30, que colide com este. O de rastreabilidade ficou com alguém do time de originação."
     },
     {
       "id": "I-019",
+      "chave": "2026-10-18|livre|estandes-e-conversas-abertas",
       "inicio": "2026-10-18T11:00:00+02:00",
-      "titulo": "Estandes de proteína e ingredientes",
+      "titulo": "Estandes e conversas abertas",
       "tipo": "livre",
       "fim": "2026-10-18T11:50:00+02:00",
-      "local": "Halls 5 e 6",
+      "local": "Paris Nord Villepinte",
       "fontes": [
-        "F-003"
-      ]
+        "F-007"
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-020",
+      "chave": "2026-10-18|deslocamento|pavilhao-l-arpege-7e",
       "inicio": "2026-10-18T11:50:00+02:00",
       "titulo": "Pavilhão -> L'Arpège (7e)",
       "tipo": "deslocamento",
@@ -1776,7 +1844,7 @@
       "local": "Villepinte -> Paris 7e",
       "componentes": [
         {
-          "rotulo": "carro, 26,7 km",
+          "rotulo": "carro, 26,7 km ao 7e",
           "minutos": 45
         }
       ],
@@ -1785,15 +1853,17 @@
       ],
       "de_item": "I-019",
       "para_item": "I-021",
-      "nota": "Transporte público levaria 59 min com duas trocas. Carro e o modal do perfil dele."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=L'Arp%C3%A8ge%2C%2084%20rue%20de%20Varenne%2C%2075007%20Paris",
+      "nota": "Transporte público levaria 59 min com duas trocas. Carro é o modal do perfil dele."
     },
     {
       "id": "I-021",
+      "chave": "C-07",
       "inicio": "2026-10-18T13:00:00+02:00",
       "titulo": "Almoço com Sofia Marchetti",
       "tipo": "refeicao",
       "fim": "2026-10-18T15:00:00+02:00",
-      "local": "L'Arpège, 84 rue de Varenne, 75007",
+      "local": "L'Arpège, 84 rue de Varenne, 75007 Paris",
       "participantes": [
         "Sofia Marchetti"
       ],
@@ -1809,20 +1879,22 @@
     },
     {
       "id": "I-022",
+      "chave": "2026-10-18|livre|tempo-livre-em-paris",
       "inicio": "2026-10-18T15:00:00+02:00",
       "titulo": "Tempo livre em Paris",
       "tipo": "livre",
       "fim": "2026-10-18T19:00:00+02:00",
       "local": "Paris 7e",
-      "nota": "Ele já está no centro e o jantar do time e às 19:30 no 14e. Primeira janela livre da viagem."
+      "nota": "Ele já está no centro e o jantar do time é às 19:30. Primeira janela livre da viagem."
     },
     {
       "id": "I-023",
+      "chave": "2026-10-18|ida-jantar",
       "inicio": "2026-10-18T19:00:00+02:00",
-      "titulo": "7e -> Le Duc (14e)",
+      "titulo": "7e -> Le Duc",
       "tipo": "deslocamento",
       "fim": "2026-10-18T19:20:00+02:00",
-      "local": "Paris 7e -> Paris 14e",
+      "local": "-> 243 boulevard Raspail, 75014 Paris",
       "componentes": [
         {
           "rotulo": "carro, travessia interna de Paris",
@@ -1833,15 +1905,17 @@
         "F-014"
       ],
       "de_item": "I-022",
-      "para_item": "I-024"
+      "para_item": "I-024",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Le%20Duc%2C%20243%20boulevard%20Raspail%2C%2075014%20Paris"
     },
     {
       "id": "I-024",
+      "chave": "C-08",
       "inicio": "2026-10-18T19:30:00+02:00",
       "titulo": "Jantar com o time de originação da Aqua Europa",
       "tipo": "refeicao",
       "fim": "2026-10-18T22:00:00+02:00",
-      "local": "Le Duc, 243 boulevard Raspail, 75014",
+      "local": "Le Duc, 243 boulevard Raspail, 75014 Paris",
       "participantes": [
         "Camila Reis",
         "Pierre Lambert",
@@ -1856,19 +1930,20 @@
         "F-002",
         "F-031"
       ],
-      "nota": "Primeiro dos dois jantares de trabalho que ele pediu. Peixe e ambiente reservado: cinco pessoas na mesa e ele precisa ouvir."
+      "nota": "Primeiro dos dois jantares de trabalho que ele pediu. Ambiente reservado: cinco pessoas na mesa e ele precisa ouvir."
     },
     {
       "id": "I-025",
+      "chave": "2026-10-18|volta-jantar",
       "inicio": "2026-10-18T22:00:00+02:00",
       "titulo": "Le Duc -> hotel",
       "tipo": "deslocamento",
-      "fim": "2026-10-18T22:45:00+02:00",
-      "local": "Paris 14e -> Villepinte",
+      "fim": "2026-10-18T22:50:00+02:00",
+      "local": "-> Villepinte",
       "componentes": [
         {
-          "rotulo": "carro: a partir das 22h45 o RER B interrompe o trecho CDG",
-          "minutos": 45
+          "rotulo": "carro: o RER B interrompe o trecho CDG a partir das 22h45",
+          "minutos": 50
         }
       ],
       "fontes": [
@@ -1876,21 +1951,29 @@
         "F-035"
       ],
       "de_item": "I-024",
-      "para_item": "I-025"
+      "para_item": "I-025",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte"
     },
     {
       "id": "I-026",
+      "chave": "2026-10-19|livre|academia-do-hotel",
       "inicio": "2026-10-19T07:30:00+02:00",
       "titulo": "Academia do hotel",
       "tipo": "livre",
       "fim": "2026-10-19T08:15:00+02:00",
       "local": "Novotel Suites Paris CDG Airport Villepinte",
+      "decisoes": [
+        "D-010"
+      ],
       "fontes": [
         "F-037"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
+      "nota": "Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel."
     },
     {
       "id": "I-027",
+      "chave": "2026-10-19|manha-pav",
       "inicio": "2026-10-19T09:30:00+02:00",
       "titulo": "Hotel -> pavilhão",
       "tipo": "deslocamento",
@@ -1906,10 +1989,12 @@
         "F-013"
       ],
       "de_item": "I-026",
-      "para_item": "I-028"
+      "para_item": "I-028",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-028",
+      "chave": "A-HENRIK",
       "inicio": "2026-10-19T10:00:00+02:00",
       "titulo": "Henrik Sørensen (Nordvest Foods) - números da transação",
       "tipo": "reuniao",
@@ -1925,10 +2010,12 @@
         "F-006",
         "F-005"
       ],
-      "nota": "Os 40 min que ele pediu, de manhã, como ele preferia. Sala fechada e não estande: a Claire Dubois, concorrente direta neste deal, está no evento a semana toda. Marcado 10:00 e não 09:30 porque pelo horário real a feira abre às 10:00."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
+      "nota": "Os 40 min que ele pediu, de manhã, como ele preferia. Sala fechada e não estande: a Claire Dubois, concorrente direta neste deal, está no evento a semana toda."
     },
     {
       "id": "I-029",
+      "chave": "C-09",
       "inicio": "2026-10-19T10:40:00+02:00",
       "titulo": "Rodada de reuniões no pavilhão",
       "tipo": "reuniao",
@@ -1937,10 +2024,12 @@
       "fontes": [
         "F-002"
       ],
-      "nota": "Janela encurtada pela ida a Lille. A agenda ainda estava em montagem."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
+      "nota": "Janela da agenda que ainda estava em montagem. Começa às 10:00, não às 09:30: pelo horário real a feira só abre às 10:00."
     },
     {
       "id": "I-030",
+      "chave": "lille|rer",
       "inicio": "2026-10-19T11:50:00+02:00",
       "titulo": "Pavilhão -> Gare du Nord",
       "tipo": "deslocamento",
@@ -1969,10 +2058,12 @@
       ],
       "de_item": "I-029",
       "para_item": "I-031",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Gare%20du%20Nord%2C%20Paris",
       "nota": "Única exceção ao carro em toda a viagem: a estação fica a 61 m da entrada e o carro no meio do dia é pior."
     },
     {
       "id": "I-031",
+      "chave": "lille|gare",
       "inicio": "2026-10-19T12:27:00+02:00",
       "titulo": "Gare du Nord: almoço rápido e embarque",
       "tipo": "refeicao",
@@ -1981,10 +2072,12 @@
       "fontes": [
         "F-018"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Gare%20du%20Nord%2C%20Paris",
       "nota": "37 min de folga antes do TGV."
     },
     {
       "id": "I-032",
+      "chave": "lille|tgv-ida",
       "inicio": "2026-10-19T13:04:00+02:00",
       "titulo": "TGV Paris Gare du Nord -> Lille Europe",
       "tipo": "deslocamento",
@@ -2003,10 +2096,12 @@
         "F-018"
       ],
       "de_item": "I-031",
-      "para_item": "I-034"
+      "para_item": "I-034",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Gare%20Lille%20Europe"
     },
     {
       "id": "I-033",
+      "chave": "lille|carro-ida",
       "inicio": "2026-10-19T14:06:00+02:00",
       "titulo": "Lille Europe -> planta da Coopérative du Nord",
       "tipo": "deslocamento",
@@ -2023,10 +2118,12 @@
       ],
       "de_item": "I-031",
       "para_item": "I-034",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Lille%2C%20France",
       "nota": "Trecho estimado. Ver incerteza U-004: com o endereço real, este tempo muda."
     },
     {
       "id": "I-034",
+      "chave": "C-10",
       "inicio": "2026-10-19T15:00:00+02:00",
       "titulo": "Visita à planta da Coopérative du Nord",
       "tipo": "reuniao",
@@ -2037,10 +2134,12 @@
       ],
       "fontes": [
         "F-002"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Lille%2C%20France"
     },
     {
       "id": "I-035",
+      "chave": "lille|carro-volta",
       "inicio": "2026-10-19T16:30:00+02:00",
       "titulo": "Planta -> Lille Europe",
       "tipo": "deslocamento",
@@ -2056,10 +2155,12 @@
         "F-019"
       ],
       "de_item": "I-034",
-      "para_item": "I-038"
+      "para_item": "I-038",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Gare%20Lille%20Europe"
     },
     {
       "id": "I-036",
+      "chave": "lille|tgv-volta",
       "inicio": "2026-10-19T17:22:00+02:00",
       "titulo": "TGV Lille Europe -> Paris Gare du Nord",
       "tipo": "deslocamento",
@@ -2078,10 +2179,12 @@
         "F-018"
       ],
       "de_item": "I-034",
-      "para_item": "I-038"
+      "para_item": "I-038",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Gare%20du%20Nord%2C%20Paris"
     },
     {
       "id": "I-037",
+      "chave": "lille|volta-hotel",
       "inicio": "2026-10-19T18:24:00+02:00",
       "titulo": "Gare du Nord -> hotel",
       "tipo": "deslocamento",
@@ -2100,10 +2203,12 @@
         "F-017"
       ],
       "de_item": "I-034",
-      "para_item": "I-038"
+      "para_item": "I-038",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte"
     },
     {
       "id": "I-038",
+      "chave": "2026-10-19|refeicao|jantar-leve-no-hotel",
       "inicio": "2026-10-19T20:00:00+02:00",
       "titulo": "Jantar leve no hotel",
       "tipo": "refeicao",
@@ -2113,25 +2218,33 @@
       "fontes": [
         "F-031"
       ],
-      "nota": "A agenda marcava 20:00 livre. Dia de 11h de porta a porta: noite sem compromisso."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
+      "nota": "A agenda marcava a noite livre."
     },
     {
       "id": "I-039",
+      "chave": "2026-10-20|livre|academia-do-hotel",
       "inicio": "2026-10-20T07:30:00+02:00",
       "titulo": "Academia do hotel",
       "tipo": "livre",
       "fim": "2026-10-20T08:15:00+02:00",
       "local": "Novotel Suites Paris CDG Airport Villepinte",
+      "decisoes": [
+        "D-010"
+      ],
       "fontes": [
         "F-037"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
+      "nota": "Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel."
     },
     {
       "id": "I-040",
-      "inicio": "2026-10-20T09:40:00+02:00",
+      "chave": "2026-10-20|manha-pav",
+      "inicio": "2026-10-20T09:30:00+02:00",
       "titulo": "Hotel -> pavilhão",
       "tipo": "deslocamento",
-      "fim": "2026-10-20T09:50:00+02:00",
+      "fim": "2026-10-20T09:40:00+02:00",
       "local": "Villepinte",
       "componentes": [
         {
@@ -2143,10 +2256,12 @@
         "F-013"
       ],
       "de_item": "I-039",
-      "para_item": "I-041"
+      "para_item": "I-041",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-041",
+      "chave": "A-ORTEGA",
       "inicio": "2026-10-20T10:00:00+02:00",
       "titulo": "Rafael Ortega (Grupo Ibérica Fresh)",
       "tipo": "reuniao",
@@ -2161,10 +2276,12 @@
       "fontes": [
         "F-005"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "Terça é o único dia dele no evento. Fornecedor de duas investidas, e fala espanhol, que o Sebastian fala."
     },
     {
       "id": "I-042",
+      "chave": "A-BELTRAN",
       "inicio": "2026-10-20T11:00:00+02:00",
       "titulo": "Café com Tomás Beltrán",
       "tipo": "reuniao",
@@ -2179,10 +2296,12 @@
       "fontes": [
         "F-005"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "Sem agenda fixa, conhece todo mundo. Vale o café."
     },
     {
       "id": "I-043",
+      "chave": "2026-10-20|almoco-pav",
       "inicio": "2026-10-20T12:00:00+02:00",
       "titulo": "Almoço na praça de alimentação",
       "tipo": "refeicao",
@@ -2190,12 +2309,27 @@
       "local": "Paris Nord Villepinte",
       "fontes": [
         "F-003"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
       "id": "I-044",
+      "chave": "2026-10-20|livre|estandes-e-conversas-abertas",
+      "inicio": "2026-10-20T13:00:00+02:00",
+      "titulo": "Estandes e conversas abertas",
+      "tipo": "livre",
+      "fim": "2026-10-20T13:45:00+02:00",
+      "local": "Paris Nord Villepinte",
+      "fontes": [
+        "F-007"
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
+    },
+    {
+      "id": "I-045",
+      "chave": "A-PRIVATE|caminhada",
       "inicio": "2026-10-20T13:45:00+02:00",
-      "titulo": "-> Hall 5A",
+      "titulo": "Caminhada até o Hall 5A",
       "tipo": "deslocamento",
       "fim": "2026-10-20T14:00:00+02:00",
       "local": "Paris Nord Villepinte",
@@ -2208,11 +2342,13 @@
       "fontes": [
         "F-011"
       ],
-      "de_item": "I-043",
-      "para_item": "I-045"
+      "de_item": "I-044",
+      "para_item": "I-046",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
-      "id": "I-045",
+      "id": "I-046",
+      "chave": "A-PRIVATE",
       "inicio": "2026-10-20T14:00:00+02:00",
       "titulo": "SIAL: Private label - o que mudou no varejo europeu",
       "tipo": "sessao",
@@ -2224,10 +2360,25 @@
       "fontes": [
         "F-003"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
       "nota": "Casa com sourcing, o outro foco declarado da edição."
     },
     {
-      "id": "I-046",
+      "id": "I-047",
+      "chave": "2026-10-20|livre|estandes-e-conversas-abertas#2",
+      "inicio": "2026-10-20T15:00:00+02:00",
+      "titulo": "Estandes e conversas abertas",
+      "tipo": "livre",
+      "fim": "2026-10-20T15:30:00+02:00",
+      "local": "Paris Nord Villepinte",
+      "fontes": [
+        "F-007"
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
+    },
+    {
+      "id": "I-048",
+      "chave": "A-CLAIRE",
       "inicio": "2026-10-20T15:30:00+02:00",
       "titulo": "Café com Claire Dubois (Fonds Meridien)",
       "tipo": "reuniao",
@@ -2242,21 +2393,25 @@
       "fontes": [
         "F-005"
       ],
-      "nota": "Relacionamento com fundos europeus, sem pauta. Nordvest fora da conversa: ela é concorrente direta nesse deal e você falou com o Henrik ontem. Local público e neutro, longe do estande da Nordvest."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte",
+      "nota": "Relacionamento com fundos europeus, sem pauta. Nordvest fora da conversa: ela é concorrente direta nesse deal. Local público e neutro, longe do estande da Nordvest."
     },
     {
-      "id": "I-047",
+      "id": "I-049",
+      "chave": "2026-10-20|livre|estandes-e-conversas-abertas#3",
       "inicio": "2026-10-20T16:00:00+02:00",
       "titulo": "Estandes e conversas abertas",
       "tipo": "livre",
-      "fim": "2026-10-20T17:30:00+02:00",
+      "fim": "2026-10-20T17:50:00+02:00",
       "local": "Paris Nord Villepinte",
       "fontes": [
-        "F-003"
-      ]
+        "F-007"
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
-      "id": "I-048",
+      "id": "I-050",
+      "chave": "2026-10-20|ida-jantar",
       "inicio": "2026-10-20T17:50:00+02:00",
       "titulo": "Pavilhão -> Le Duc",
       "tipo": "deslocamento",
@@ -2271,11 +2426,13 @@
       "fontes": [
         "F-014"
       ],
-      "de_item": "I-047",
-      "para_item": "I-049"
+      "de_item": "I-049",
+      "para_item": "I-051",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Le%20Duc%2C%20243%20boulevard%20Raspail%2C%2075014%20Paris"
     },
     {
-      "id": "I-049",
+      "id": "I-051",
+      "chave": "C-12",
       "inicio": "2026-10-20T19:00:00+02:00",
       "titulo": "Jantar com investidores",
       "tipo": "refeicao",
@@ -2295,7 +2452,8 @@
       "nota": "Segundo dos dois jantares de trabalho que ele pediu, com contraparte externa. Peixe e ambiente reservado, e comporta mesa maior se forem mais de quatro."
     },
     {
-      "id": "I-050",
+      "id": "I-052",
+      "chave": "2026-10-20|volta-jantar",
       "inicio": "2026-10-20T21:30:00+02:00",
       "titulo": "Le Duc -> hotel",
       "tipo": "deslocamento",
@@ -2311,22 +2469,30 @@
         "F-014",
         "F-035"
       ],
-      "de_item": "I-049",
-      "para_item": "I-050"
+      "de_item": "I-051",
+      "para_item": "I-052",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte"
     },
     {
-      "id": "I-051",
+      "id": "I-053",
+      "chave": "2026-10-21|livre|academia-do-hotel",
       "inicio": "2026-10-21T07:30:00+02:00",
       "titulo": "Academia do hotel",
       "tipo": "livre",
       "fim": "2026-10-21T08:15:00+02:00",
       "local": "Novotel Suites Paris CDG Airport Villepinte",
+      "decisoes": [
+        "D-010"
+      ],
       "fontes": [
         "F-037"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
+      "nota": "Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel."
     },
     {
-      "id": "I-052",
+      "id": "I-054",
+      "chave": "late-checkout",
       "inicio": "2026-10-21T09:30:00+02:00",
       "titulo": "Late check-out solicitado e mala na portaria",
       "tipo": "hospedagem",
@@ -2338,10 +2504,12 @@
       "fontes": [
         "F-036"
       ],
-      "nota": "O check-out padrão e meio-dia e a sessão de encerramento é 11:00-12:00: não dá para estar nos dois. Late check-out pedido na reserva; se negarem, a mala fica na portaria."
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
+      "nota": "O check-out padrão é meio-dia e a sessão de encerramento é 11:00-12:00: não dá para estar nos dois. Late check-out pedido na reserva; se negarem, a mala fica na portaria."
     },
     {
-      "id": "I-053",
+      "id": "I-055",
+      "chave": "2026-10-21|manha-pav",
       "inicio": "2026-10-21T10:30:00+02:00",
       "titulo": "Hotel -> pavilhão",
       "tipo": "deslocamento",
@@ -2356,11 +2524,13 @@
       "fontes": [
         "F-013"
       ],
-      "de_item": "I-052",
-      "para_item": "I-054"
+      "de_item": "I-054",
+      "para_item": "I-056",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
-      "id": "I-054",
+      "id": "I-056",
+      "chave": "C-13",
       "inicio": "2026-10-21T11:00:00+02:00",
       "titulo": "SIAL: encerramento",
       "tipo": "sessao",
@@ -2369,10 +2539,12 @@
       "fontes": [
         "F-002",
         "F-003"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
-      "id": "I-055",
+      "id": "I-057",
+      "chave": "2026-10-21|almoco-pav",
       "inicio": "2026-10-21T12:00:00+02:00",
       "titulo": "Almoço e últimas conversas",
       "tipo": "refeicao",
@@ -2380,10 +2552,12 @@
       "local": "Paris Nord Villepinte",
       "fontes": [
         "F-003"
-      ]
+      ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte"
     },
     {
-      "id": "I-056",
+      "id": "I-058",
+      "chave": "2026-10-21|pav-hotel",
       "inicio": "2026-10-21T13:00:00+02:00",
       "titulo": "Pavilhão -> hotel",
       "tipo": "deslocamento",
@@ -2398,23 +2572,27 @@
       "fontes": [
         "F-013"
       ],
-      "de_item": "I-055",
-      "para_item": "I-057"
+      "de_item": "I-057",
+      "para_item": "I-059",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte"
     },
     {
-      "id": "I-057",
+      "id": "I-059",
+      "chave": "2026-10-21|livre|hotel-trabalho-e-reorganizar-a-mala",
       "inicio": "2026-10-21T13:10:00+02:00",
       "titulo": "Hotel: trabalho e reorganizar a mala",
       "tipo": "livre",
-      "fim": "2026-10-21T15:30:00+02:00",
+      "fim": "2026-10-21T15:35:00+02:00",
       "local": "Novotel Suites Paris CDG Airport Villepinte",
       "decisoes": [
         "D-016"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte",
       "nota": "Janela de folga deliberada antes do aeroporto."
     },
     {
-      "id": "I-058",
+      "id": "I-060",
+      "chave": "hotel-cdg",
       "inicio": "2026-10-21T15:35:00+02:00",
       "titulo": "Hotel -> CDG Terminal 2E",
       "tipo": "deslocamento",
@@ -2432,11 +2610,13 @@
       "fontes": [
         "F-010"
       ],
-      "de_item": "I-057",
-      "para_item": "I-059"
+      "de_item": "I-059",
+      "para_item": "I-061",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=A%C3%A9roport%20Paris-Charles%20de%20Gaulle%2C%20Terminal%202E"
     },
     {
-      "id": "I-059",
+      "id": "I-061",
+      "chave": "cdg-espera",
       "inicio": "2026-10-21T16:00:00+02:00",
       "titulo": "CDG: check-in, bagagem, fronteira de saída e sala",
       "tipo": "livre",
@@ -2448,10 +2628,12 @@
       "fontes": [
         "F-021"
       ],
+      "mapa": "https://www.google.com/maps/search/?api=1&query=A%C3%A9roport%20Paris-Charles%20de%20Gaulle%2C%20Terminal%202E",
       "nota": "2h55 de antecedência. O EES também roda na saída, e não só na entrada."
     },
     {
-      "id": "I-060",
+      "id": "I-062",
+      "chave": "voo-volta",
       "inicio": "2026-10-21T18:55:00+02:00",
       "titulo": "Air France CDG -> GRU",
       "tipo": "voo",
@@ -2464,7 +2646,53 @@
       "fontes": [
         "F-009"
       ],
-      "nota": "AF-0454 CDG 18:55 -> GRU 05:25(+1)"
+      "nota": "AF-0454 CDG 18:55 -> GRU 05:25(+1). Pousa em GRU 22/10 às 05:25."
+    },
+    {
+      "id": "I-063",
+      "chave": "pouso-gru",
+      "inicio": "2026-10-22T05:25:00-03:00",
+      "titulo": "Pouso em GRU -> São Paulo",
+      "tipo": "deslocamento",
+      "fim": "2026-10-22T07:10:00-03:00",
+      "local": "GRU -> São Paulo",
+      "componentes": [
+        {
+          "rotulo": "taxiamento, desembarque e caminhada",
+          "minutos": 15
+        },
+        {
+          "rotulo": "imigração brasileira (cidadão, e-gates)",
+          "minutos": 15
+        },
+        {
+          "rotulo": "esteira de bagagem",
+          "minutos": 25
+        },
+        {
+          "rotulo": "carro, GRU -> São Paulo no início da manhã",
+          "minutos": 50
+        }
+      ],
+      "fontes": [
+        "F-042"
+      ],
+      "de_item": "I-063",
+      "para_item": "I-064",
+      "nota": "Destino estimado: o corpus não diz se ele vai para casa ou para o escritório."
+    },
+    {
+      "id": "I-064",
+      "chave": "quinta-manha",
+      "inicio": "2026-10-22T07:10:00-03:00",
+      "titulo": "Manhã sem reunião de decisão",
+      "tipo": "livre",
+      "fim": "2026-10-22T13:00:00-03:00",
+      "local": "São Paulo",
+      "fontes": [
+        "F-001"
+      ],
+      "nota": "A mesma regra do sábado vale na volta: nada de decisão no primeiro meio período depois de voo intercontinental. A agenda exportada não tem nada marcado na quinta."
     }
   ]
 }

@@ -1,6 +1,5 @@
 /* Tempos de deslocamento medidos no mundo real.
-   Gerado de corpus/deslocamentos.json, que e a fonte de verdade.
-   Regra do desafio: preco e disponibilidade vem do corpus; distancia, rota e tempo vem do mundo real. */
+   Gerado de corpus/deslocamentos.json, que é a fonte de verdade. */
 window.AQUA = window.AQUA || {};
 AQUA.deslocamentos = {
   "_doc": "Tempos de deslocamento medidos no mundo real. Regra do desafio: preco e disponibilidade vem do corpus; distancia, rota e tempo vem do mundo real.",
@@ -75,7 +74,7 @@ AQUA.deslocamentos = {
     {
       "id": "T-EXPO-ARPEGE",
       "origem": "Paris Nord Villepinte",
-      "destino": "L'Arpege, 84 rue de Varenne, 75007 Paris",
+      "destino": "L'Arpège, 84 rue de Varenne, 75007 Paris",
       "modal": "carro / VTC",
       "distancia_km": 26.7,
       "duracao_min": 45,
@@ -148,6 +147,26 @@ AQUA.deslocamentos = {
       "duracao_min": 25,
       "duracao_min_otimista": 19,
       "fonte": "F-010"
+    },
+    {
+      "id": "T-GRU-SP",
+      "origem": "GRU Terminal 3 (saída do terminal)",
+      "destino": "São Paulo (casa ou escritório, endereço não informado)",
+      "modal": "carro",
+      "duracao_min": 50,
+      "fonte": "F-042",
+      "estimado": true,
+      "nota": "ESTIMATIVA. Início da manhã de quinta, 45 a 60 min. O corpus não diz o destino."
+    },
+    {
+      "id": "T-ESC-GRU",
+      "origem": "Escritório, São Paulo (endereço não informado)",
+      "destino": "GRU Terminal 3",
+      "modal": "carro",
+      "duracao_min": 60,
+      "fonte": "F-022",
+      "estimado": true,
+      "nota": "ESTIMATIVA. Sexta à tarde. O corpus não traz o endereço do escritório."
     }
   ],
   "desembarque_cdg_t2e": {

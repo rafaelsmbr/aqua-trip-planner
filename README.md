@@ -54,7 +54,7 @@ node cli/verificar-mobile.js                       # emula um celular 375x812 e 
 
 O `conferir-citacoes.js` existe porque citação inventada é o risco mais sério de um
 trabalho assim. Ele normaliza acento e pontuação e procura cada trecho citado dentro do
-arquivo original em `corpus/aqua/`. São **29 citações do corpus, todas conferem**. As 28
+arquivo original em `corpus/aqua/`. São **29 citações do corpus, todas conferem**. As 30
 restantes vêm de web, mapa e estimativa, e essas não são conferíveis localmente — para
 elas o que existe é URL mais horário de consulta.
 
@@ -103,22 +103,64 @@ Precisa do AWS CLI. Nenhuma credencial fica no repositório.
 
 ### Um fato novo, e rodar de novo
 
-É o exercício da demonstração. Um fato novo entra por arquivo e o plano é recalculado,
-dizendo o que preservou, o que mudou e o que quebrou:
+É o exercício da demonstração: eles dão um fato novo e pedem para rodar de novo. A agenda
+inteira está em dados — compromissos do corpus em `dados/corpus.js`, os que o plano marcou
+em `dados/decisoes.js` (`AQUA.agendados`) —, então um fato novo é um **remendo nos dados**,
+não uma edição de código. O motor refaz trajetos, almoço e tempo livre a partir dele.
 
 ```
-node cli/plano.js                                               # rodada 1, guarda o estado
-node cli/plano.js --fato fatos/voo-af-cancelado.json --delta    # rodada 2, compara com a anterior
+node cli/plano.js --fato fatos/etienne-14h.json --delta
 ```
 
-Há três exemplos prontos em `fatos/`: voo cancelado, orçamento 20% menor, contraparte
-que desmarcou. O formato é um JSON de duas linhas — dá para escrever um na hora:
+```
+fato novo          O Étienne remarcou a reunião de sábado para as 14:00.
+delta              17 decisões preservadas, 0 alteradas; 2 compromisso(s) mudaram, 0 entraram, 0 saíram
+                   17/10 16:00-17:00 Reunião com Étienne Prévost (Groupe Vallonne)  ->  14:00-15:00
+                   17/10 13:45-15:00 Almoço na praça de alimentação  ->  15:00-16:15
+travas             18/18
+```
+
+O `--delta` compara com o mesmo plano sem o fato, calculado na hora: diz o que se
+preservou, o que mudou no roteiro e quais travas quebraram por causa dele.
+
+O formato do fato. `em` é uma de `compromissos`, `agendados`, `voos`, `hoteis`,
+`restaurantes`, `contatos`, `sessoes`, `politica`; os ids estão nesses arquivos de dados.
 
 ```json
-{ "fato_novo": "descreva o fato", "escolhas": { "voo": "VOO-B" } }
+{
+  "fato_novo": "texto livre que vai para o relatório",
+  "mudar":   [ { "em": "compromissos", "id": "C-04", "inicio": "14:00", "fim": "15:00" } ],
+  "incluir": [ { "em": "compromissos", "id": "C-20", "dia": "2026-10-20", "inicio": "16:30",
+                 "fim": "17:15", "titulo": "Reunião com a JBS", "local": "Estande da JBS, Hall 4",
+                 "firmeza": "fixo" } ],
+  "remover": [ { "em": "compromissos", "id": "C-10" } ],
+  "escolhas": { "voo": "VOO-B" }
+}
 ```
 
-No app o mesmo exercício está no painel **Fato novo**, no topo.
+Todos os campos são opcionais, menos `fato_novo`. Um id que não existe, uma hora fora de
+`HH:MM` ou um dia fora da viagem geram uma mensagem clara, não um erro técnico.
+
+Exemplos prontos em `fatos/`, com o que cada um provoca:
+
+| Arquivo | Fato | Resultado |
+|---|---|---|
+| `etienne-14h.json` | Étienne remarca para 14:00 | almoço remanejado; 18/18 |
+| `nova-reuniao-terca.json` | reunião nova na terça, Hall 4 | entra no roteiro; 18/18 |
+| `le-duc-fechou-domingo.json` | Le Duc não abre no domingo | jantar do time vai para outra casa; 18/18 |
+| `lille-cancelada.json` | cooperativa cancela a visita | tarde volta para a feira; 18/18 |
+| `sofia-cancelou.json` | Sofia desmarca o almoço | domingo se reorganiza; 18/18 |
+| `henrik-terca.json` | Henrik só pode terça 16:00 | **G-04**: cairia depois da Claire no mesmo dia |
+| `atraso-90.json` | voo pousa 90 min atrasado | **G-01**: perde a abertura; almoço vai para 14:10 |
+| `hotel-mais-caro.json` | diária a EUR 350 | **G-03**: estoura o teto da política |
+| `voo-af-cancelado.json` | Air France cancela | troca para LATAM; **G-01** acende |
+| `orcamento-menor.json` | orçamento 20% menor | **G-01** e **G-05** acendem |
+
+**Na interface**, o mesmo fato entra de dois jeitos. Pelo arquivo `fatos/ativo.js`:
+escreva o fato lá, salve e recarregue o `index.html` — o app abre com ele aplicado, e o
+mesmo arquivo roda no terminal com `node cli/plano.js --fato fatos/ativo.js --delta`.
+Ou pelo painel **Fato novo** (o botão com o raio, no topo): ele tem os fatos prontos e um
+campo para colar um JSON na hora, com a lista dos ids disponíveis.
 
 ---
 
@@ -144,9 +186,9 @@ em "O sistema decidiu por você" e em `saida/PLANO.md`.
 
 ---
 
-## As 16 travas
+## As 18 travas
 
-A cada recálculo o motor roda 16 verificações. Elas existem para o caso que eles
+A cada recálculo o motor roda 18 verificações. Elas existem para o caso que eles
 descreveram: um fato novo entra, o plano continua de pé **na aparência**, e alguma coisa
 quebrou sem ninguém perceber. Entre elas:
 
@@ -156,7 +198,10 @@ quebrou sem ninguém perceber. Entre elas:
 - a diária do hotel dentro do teto de EUR 320;
 - exatamente dois jantares de trabalho na semana, como a Camila pediu;
 - nenhuma refeição dele em casa com cordeiro na base do cardápio;
-- todo trecho de deslocamento declara componentes que somam a janela exata.
+- todo trecho de deslocamento declara componentes que somam a janela exata;
+- chega a GRU com 1h30 de folga na ida;
+- todo compromisso tem trajeto calculado — um compromisso novo num lugar que o motor não
+  sabe ligar acende uma trava, em vez de ganhar um trajeto inventado.
 
 Troque `voo` para `VOO-B` e a trava G-01 acende: com a LATAM pousando 10:55, a fila de
 fronteira de CDG o coloca pronto às 13:05, cinco minutos depois do início da abertura.
@@ -187,7 +232,7 @@ index.html  app.css  app.js     o app
 manifest.webmanifest  sw.js     instalável e offline (PWA)
 icons/                          ícones do app, gerados a partir da marca
 engine.js                       o motor: escolhas -> roteiro, custos, alertas, travas
-dados/fontes.js                 40 fontes e 57 trechos citados
+dados/fontes.js                 42 fontes e 59 trechos citados
 dados/corpus.js                 o material da Aqua, estruturado, cada fato com sua evidência
 dados/decisoes.js               as 17 decisões, as 16 restrições, as 9 incertezas
 dados/deslocamentos.js          tempos de deslocamento medidos no mundo real
@@ -197,7 +242,7 @@ cli/plano.js                    gera e valida o plano estruturado
 cli/conferir-citacoes.js        confere cada citação contra o arquivo original
 cli/verificar-mobile.js         emula celular de verdade e mede overflow (precisa do Chrome)
 cli/deploy.sh                   publica num bucket S3; credenciais vêm do ambiente
-fatos/                          exemplos de fato novo para a demonstração
+fatos/                          exemplos de fato novo; ativo.js é o que o app aplica ao abrir
 saida/                          plano.json e PLANO.md gerados
 docs/DECISOES.md                o que verifiquei, como, e o que não consegui decidir
 ```
@@ -220,9 +265,10 @@ o aviso de greve de tripulação de 17 a 21/10 e a obra noturna do RER B. Detalh
 ## O que este repositório não faz
 
 - Não compra, não reserva e não emite nada. É recomendação com justificativa.
-- Não consulta preço ao vivo. Os valores de voo, hotel e restaurante são os do corpus,
-  porque o enunciado determina que o corpus manda nesses campos. A consulta ao vivo
-  seria o próximo passo natural e está anotada em `docs/DECISOES.md`.
+- Não puxa preço de API. O plano calcula com os valores do corpus, porque o enunciado
+  determina que o corpus manda nesses campos. Ao lado de cada valor cotado há um link que
+  abre a consulta de hoje já com as datas preenchidas — Google Flights para o voo, Booking
+  para o hotel, a ficha do restaurante no Maps — sem chave e sem conta.
 - Não chama modelo de linguagem em tempo de execução. O motor é determinístico, de
   propósito: roda sem chave, o resultado é reprodutível, e o delta de uma rodada para a
   outra é comparável. O julgamento foi feito antes, na curadoria do corpus e no catálogo

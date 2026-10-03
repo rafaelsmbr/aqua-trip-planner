@@ -35,8 +35,14 @@
       "duracao_min": 16,
       "fonte": "F-012",
       "componentes": [
-        { "rotulo": "RER B em veiculo (1 a 2 paradas)", "minutos": 11 },
-        { "rotulo": "caminhada estacao -> entrada dos halls (61 m)", "minutos": 5 }
+        {
+          "rotulo": "RER B em veiculo (1 a 2 paradas)",
+          "minutos": 11
+        },
+        {
+          "rotulo": "caminhada estacao -> entrada dos halls (61 m)",
+          "minutos": 5
+        }
       ],
       "nota": "Frequencia a cada 15 min. Nao usado no sabado: bagagem despachada e risco de atraso."
     },
@@ -65,7 +71,7 @@
     {
       "id": "T-EXPO-ARPEGE",
       "origem": "Paris Nord Villepinte",
-      "destino": "L'Arpege, 84 rue de Varenne, 75007 Paris",
+      "destino": "L'Arpège, 84 rue de Varenne, 75007 Paris",
       "modal": "carro / VTC",
       "distancia_km": 26.7,
       "duracao_min": 45,
@@ -93,9 +99,18 @@
       "duracao_min": 37,
       "fonte": "F-017",
       "componentes": [
-        { "rotulo": "caminhada halls -> estacao Parc des Expositions", "minutos": 6 },
-        { "rotulo": "espera de plataforma (frequencia 15 min)", "minutos": 5 },
-        { "rotulo": "RER B, 9 paradas", "minutos": 26 }
+        {
+          "rotulo": "caminhada halls -> estacao Parc des Expositions",
+          "minutos": 6
+        },
+        {
+          "rotulo": "espera de plataforma (frequencia 15 min)",
+          "minutos": 5
+        },
+        {
+          "rotulo": "RER B, 9 paradas",
+          "minutos": 26
+        }
       ],
       "nota": "RER B e o modal correto: Gare du Nord de carro em dia de semana e pior."
     },
@@ -129,6 +144,26 @@
       "duracao_min": 25,
       "duracao_min_otimista": 19,
       "fonte": "F-010"
+    },
+    {
+      "id": "T-GRU-SP",
+      "origem": "GRU Terminal 3 (saída do terminal)",
+      "destino": "São Paulo (casa ou escritório, endereço não informado)",
+      "modal": "carro",
+      "duracao_min": 50,
+      "fonte": "F-042",
+      "estimado": true,
+      "nota": "ESTIMATIVA. Início da manhã de quinta, 45 a 60 min. O corpus não diz o destino."
+    },
+    {
+      "id": "T-ESC-GRU",
+      "origem": "Escritório, São Paulo (endereço não informado)",
+      "destino": "GRU Terminal 3",
+      "modal": "carro",
+      "duracao_min": 60,
+      "fonte": "F-022",
+      "estimado": true,
+      "nota": "ESTIMATIVA. Sexta à tarde. O corpus não traz o endereço do escritório."
     }
   ],
   "desembarque_cdg_t2e": {
@@ -139,28 +174,64 @@
       "otimista": {
         "total_min": 55,
         "componentes": [
-          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 10 },
-          { "rotulo": "controle de fronteira (PAF/EES)", "minutos": 20 },
-          { "rotulo": "esteira de bagagem", "minutos": 20 },
-          { "rotulo": "saida / alfandega", "minutos": 5 }
+          {
+            "rotulo": "taxiamento + desembarque + caminhada ao controle",
+            "minutos": 10
+          },
+          {
+            "rotulo": "controle de fronteira (PAF/EES)",
+            "minutos": 20
+          },
+          {
+            "rotulo": "esteira de bagagem",
+            "minutos": 20
+          },
+          {
+            "rotulo": "saida / alfandega",
+            "minutos": 5
+          }
         ]
       },
       "conservador": {
         "total_min": 100,
         "componentes": [
-          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 20 },
-          { "rotulo": "controle de fronteira (PAF/EES)", "minutos": 50 },
-          { "rotulo": "esteira de bagagem (parcialmente paralela ao controle)", "minutos": 20 },
-          { "rotulo": "saida / alfandega", "minutos": 10 }
+          {
+            "rotulo": "taxiamento + desembarque + caminhada ao controle",
+            "minutos": 20
+          },
+          {
+            "rotulo": "controle de fronteira (PAF/EES)",
+            "minutos": 50
+          },
+          {
+            "rotulo": "esteira de bagagem (parcialmente paralela ao controle)",
+            "minutos": 20
+          },
+          {
+            "rotulo": "saida / alfandega",
+            "minutos": 10
+          }
         ]
       },
       "pessimo": {
         "total_min": 120,
         "componentes": [
-          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 20 },
-          { "rotulo": "controle de fronteira (PAF/EES) em pico de fila nao-UE", "minutos": 70 },
-          { "rotulo": "esteira de bagagem (parcialmente paralela)", "minutos": 20 },
-          { "rotulo": "saida / alfandega", "minutos": 10 }
+          {
+            "rotulo": "taxiamento + desembarque + caminhada ao controle",
+            "minutos": 20
+          },
+          {
+            "rotulo": "controle de fronteira (PAF/EES) em pico de fila nao-UE",
+            "minutos": 70
+          },
+          {
+            "rotulo": "esteira de bagagem (parcialmente paralela)",
+            "minutos": 20
+          },
+          {
+            "rotulo": "saida / alfandega",
+            "minutos": 10
+          }
         ]
       }
     },

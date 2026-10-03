@@ -1,11 +1,11 @@
 # Roteiro: Sebastian Popik no SIAL Paris 2026
 
 > Gerado por `node cli/plano.js`.
-> Travas de consistência: **16/16**. Custo total: **EUR 5.810**.
+> Travas de consistência: **18/18**. Custo total: **EUR 5.880**.
 
 ## Em uma linha
 
-Sai de Guarulhos na noite de sexta 16/10 pela Air France, pousa em CDG as 10:30 de sábado e vai **direto do aeroporto ao pavilhão**, com a mala seguindo para o hotel, para alcançar a sessão de abertura das 13:00 - a única que ele disse que interessa de verdade. Fica as quatro noites no Novotel Suites Paris CDG Airport Villepinte, a 8 min do pavilhão. Volta quarta 21/10 as 18:55.
+Sai de Guarulhos na noite de sexta 16/10 pela Air France, pousa em CDG às 10:30 de sábado e vai **direto do aeroporto ao pavilhão**, com a mala seguindo para o hotel, para alcançar a sessão de abertura — a única que ele disse que interessa de verdade. Fica as quatro noites no Novotel Suites Paris CDG Airport Villepinte, a 8 min do pavilhão. Volta quarta 21/10 às 18:55 e pousa em GRU na quinta às 05:25.
 
 A margem para a abertura é de **20 min**. Essa margem é o número que manda em todo o sábado.
 
@@ -13,10 +13,10 @@ A margem para a abertura é de **20 min**. Essa margem é o número que manda em
 
 - **[ATENCAO] Folga de só 20 min para a sessão de abertura** - Air France pousa 10:30 e, no cenário conservador de fronteira, você fica pronto 12:40. Qualquer atraso come a margem inteira. Fast-track de imigração e motorista pré-agendado estão no plano justamente por isso.
 - **[ATENCAO] Air France está no aviso de greve de 17 a 21/10** - O aviso cobre toda transportadora francesa e vale exatamente nos seus dois dias de voo. Não é garantia de parada, mas se cancelar no dia 17 você perde o sábado inteiro. A LATAM LA-8022 está fora do aviso e é trocável no Inbox.
-- **[ATENCAO] A reunião das 16:00 cai no período que ele pediu para não usar** - Seu perfil registra duas vezes: nada de decisão no primeiro meio período depois de voo intercontinental. Mantivemos o compromisso porque foi o Étienne quem marcou, o relacionamento é antigo e a pauta é sourcing, não número. O que NÃO entra nesse dia e o Henrik, que quer discutir números - ele ficou na segunda de manhã.
-- **[INFO] A segunda tem 11h de porta a porta para 1h30 de visita** - Sair às 09:30 do hotel é voltar às 19:09, sendo 3h54 só de deslocamento ida e volta a Lille. Se a visita for cortesia e não o ponto da viagem, converter em call devolve 4h30 de feira no dia em que o Henrik também está.
-- **[ATENCAO] Claire e Henrik estão nos dois lados do mesmo deal** - Você vê o Henrik (Nordvest) segunda 10:00 e a Claire (concorrente direta no deal da Nordvest) terça 15:30. Dias diferentes e Henrik primeiro, de propósito. A disciplina na conversa com ela é a única proteção que o plano não consegue dar sozinho.
+- **[ATENCAO] A reunião das 16:00 cai no período que ele pediu para não usar** - Seu perfil registra duas vezes: nada de decisão no primeiro meio período depois de voo intercontinental. Mantivemos o compromisso porque foi o Étienne quem marcou, o relacionamento é antigo e a pauta é sourcing, não número. O que NÃO entra nesse dia é o Henrik, que quer discutir números.
+- **[INFO] A segunda tem 9h39 de porta a porta para 1h30 de visita** - Sair do hotel às 09:30 e voltar às 19:09, sendo 4h26 só de deslocamento ida e volta a Lille. Se a visita for cortesia e não o ponto da viagem, converter em call devolve a tarde de feira no dia em que o Henrik também está.
 - **[ATENCAO] A volta de quarta também cai no aviso de greve** - O aviso de 17 a 21/10 cobre o dia 21, que é o dia da sua volta. Vale ter o LA-8023 das 18:55 mapeado como alternativa: mesmo horário, mesmo aeroporto.
+- **[ATENCAO] Claire e Henrik estão nos dois lados do mesmo deal** - Você vê o Henrik (Nordvest) segunda 10:00 e a Claire (concorrente direta no deal da Nordvest) terça 15:30. Dias diferentes e Henrik primeiro, de propósito. A disciplina na conversa com ela é a única proteção que o plano não consegue dar sozinho.
 
 ## Itinerário
 
@@ -25,11 +25,11 @@ A margem para a abertura é de **20 min**. Essa margem é o número que manda em
 _2 compromisso(s), 1h em deslocamento._
 
 - `09:00-10:30` **Comitê de investimentos** - Escritório, São Paulo
-- `14:00-15:00` **Call com fundo LP** - Remoto
-    - _Horário de Brasília, não de Paris. A secretaria registrou isso em separado porque o resto do dia vira Paris._
-- `15:00-16:00` **Escritório -> GRU** _(1h)_
-    - carro, escritório ao aeroporto em sexta a tarde: 60 min
-- `16:00-18:05` **GRU: despacho de bagagem, sala e embarque** - GRU Terminal 3
+- `14:00-15:00` **Call com fundo LP** - remoto
+    - _Horário de Brasília, não de Paris. A secretaria registrou isso em separado porque o resto da viagem vira Paris._
+- `15:00-16:00` **Escritório -> GRU** _(1h)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Aeroporto%20Internacional%20de%20Guarulhos%2C%20Terminal%203&travelmode=driving)
+    - carro, escritório ao aeroporto em sexta à tarde: 60 min
+- `16:00-18:05` **GRU: despacho de bagagem, sala e embarque** - [GRU Terminal 3](https://www.google.com/maps/search/?api=1&query=Aeroporto%20Internacional%20de%20Guarulhos%2C%20Terminal%203)
     - _Ele sempre despacha. 2h05 de folga antes da partida._
 - `18:05-23:59` **Air France AF-0459 GRU -> CDG** - GRU -> CDG
     - _Voo noturno, como ele prefere na ida para a Europa. Executiva, autorizada pela política acima de 8h. Pousa 10:30 de sábado._
@@ -38,7 +38,7 @@ _2 compromisso(s), 1h em deslocamento._
 
 _2 compromisso(s), 2h30 em deslocamento._
 
-- `10:30-12:40` **Pouso em CDG -> Hall 7, pronto para a abertura** _(2h10)_
+- `10:30-12:40` **Pouso em CDG -> Hall 7, pronto para a abertura** _(2h10)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=driving)
     - taxiamento, desembarque e caminhada ao controle: 20 min
     - controle de fronteira (EES, fila não-UE): 50 min
     - esteira de bagagem (parte em paralelo ao controle): 20 min
@@ -46,137 +46,155 @@ _2 compromisso(s), 2h30 em deslocamento._
     - VTC pré-agendado, CDG -> 82 Avenue des Nations: 20 min
     - credenciamento e caminhada até o Hall 7: 10 min
     - _A conta começa no instante do pouso, não na porta do aeroporto. A mala segue com o motorista para o hotel: o check-in do Novotel é às 14:00 e não haveria quarto liberado agora._
-- `13:00-13:45` **SIAL: sessão de abertura - Food intelligence: redefining the value chain** - Hall 7, palco principal
+- `13:00-13:45` **SIAL: sessão de abertura - Food intelligence: redefining the value chain** - [Hall 7, palco principal](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - _A sessão que ele disse que interessa de verdade. Todo o sábado foi montado para trás a partir deste horário._
-- `13:45-15:00` **Almoço na praça de alimentação e primeira volta pelos halls** - Paris Nord Villepinte
+- `13:45-15:00` **Almoço na praça de alimentação** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - _Não há restaurante de serviço completo dentro dos halls, só praça de alimentação e café de feira._
-- `15:00-15:50` **Estandes de sourcing de proteína** - Halls 5 e 6
-    - _Foco declarado da edição: sourcing de ingredientes e proteína._
-- `15:50-16:00` **Hall 7 -> Hall 5A** _(10 min)_
+- `15:00-15:50` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+    - _Foco declarado da edição: sourcing de ingredientes e proteína. Três conversas boas valem mais que vinte apertos de mão._
+- `15:50-16:00` **Hall 7 -> Hall 5A** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=walking)
     - caminhada entre halls: 10 min
-- `16:00-17:00` **Étienne Prévost (Groupe Vallonne)** - Estande do grupo, Hall 5A
+- `16:00-17:00` **Reunião com Étienne Prévost (Groupe Vallonne)** - [Estande do grupo, Hall 5A](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - com: Étienne Prévost
-    - _Ele marcou pelo calendário do Groupe Vallonne e o convite chegou em horário de Paris, então 16:00 aqui é 16:00 local mesmo. Conversa de relacionamento e sourcing, não de decisão: é o primeiro meio período depois do voo._
-- `17:00-17:40` **Volta pelos halls de ingredientes** - Paris Nord Villepinte
-- `17:40-17:50` **Pavilhão -> hotel** _(10 min)_
+    - _Ele marcou pelo calendário do Groupe Vallonne e o convite chegou em horário de Paris, então 16:00 aqui é 16:00 local mesmo. Conversa de relacionamento e sourcing, não de decisão._
+- `17:00-17:40` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `17:40-17:50` **Pavilhão -> hotel** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `17:50-18:30` **Check-in no Novotel Suites Paris CDG Airport Villepinte** - Villepinte (93)
+- `17:50-18:30` **Check-in no Novotel Suites Paris CDG Airport Villepinte** - [Villepinte (93)](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - _A mala já está na portaria desde o meio-dia._
-- `20:00-21:00` **Jantar leve no hotel** - Novotel Suites Paris CDG Airport Villepinte
+- `20:00-21:00` **Jantar leve no hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - _Noite livre depois do voo. Ele dorme mal em voo e pousou hoje._
 
 ### Domingo, 18/10 - Paris (horário de Paris)
 
-_1 compromisso(s), 2h em deslocamento._
+_1 compromisso(s), 2h05 em deslocamento._
 
-- `07:30-08:15` **Academia do hotel** - Novotel Suites Paris CDG Airport Villepinte
+- `07:30-08:15` **Academia do hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - _Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel._
-- `09:30-09:40` **Hotel -> pavilhão** _(10 min)_
+- `09:30-09:40` **Hotel -> pavilhão** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `10:00-11:00` **SIAL: painel de proteínas alternativas** - Hall 6
+- `10:00-11:00` **SIAL: painel de proteínas alternativas** - [Hall 6](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - _Escolhido sobre o painel de rastreabilidade das 10:30, que colide com este. O de rastreabilidade ficou com alguém do time de originação._
-- `11:00-11:50` **Estandes de proteína e ingredientes** - Halls 5 e 6
-- `11:50-12:35` **Pavilhão -> L'Arpège (7e)** _(45 min)_
-    - carro, 26,7 km: 45 min
-    - _Transporte público levaria 59 min com duas trocas. Carro e o modal do perfil dele._
-- `13:00-15:00` **Almoço com Sofia Marchetti** - L'Arpège, 84 rue de Varenne, 75007
+- `11:00-11:50` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `11:50-12:35` **Pavilhão -> L'Arpège (7e)** _(45 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=L'Arp%C3%A8ge%2C%2084%20rue%20de%20Varenne%2C%2075007%20Paris&travelmode=driving)
+    - carro, 26,7 km ao 7e: 45 min
+    - _Transporte público levaria 59 min com duas trocas. Carro é o modal do perfil dele._
+- `13:00-15:00` **Almoço com Sofia Marchetti** - L'Arpège, 84 rue de Varenne, 75007 Paris
     - com: Sofia Marchetti
     - _Cozinha vegetal. Ela é vegetariana há anos e isso quase deu problema no jantar de Milão em maio. Ambiente silencioso: dá para conversar._
 - `15:00-19:00` **Tempo livre em Paris** - Paris 7e
-    - _Ele já está no centro e o jantar do time e às 19:30 no 14e. Primeira janela livre da viagem._
-- `19:00-19:20` **7e -> Le Duc (14e)** _(20 min)_
+    - _Ele já está no centro e o jantar do time é às 19:30. Primeira janela livre da viagem._
+- `19:00-19:20` **7e -> Le Duc** _(20 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Le%20Duc%2C%20243%20boulevard%20Raspail%2C%2075014%20Paris&travelmode=driving)
     - carro, travessia interna de Paris: 20 min
-- `19:30-22:00` **Jantar com o time de originação da Aqua Europa** - Le Duc, 243 boulevard Raspail, 75014
+- `19:30-22:00` **Jantar com o time de originação da Aqua Europa** - Le Duc, 243 boulevard Raspail, 75014 Paris
     - com: Camila Reis, Pierre Lambert, Ana Sousa, Diego Fontana
-    - _Primeiro dos dois jantares de trabalho que ele pediu. Peixe e ambiente reservado: cinco pessoas na mesa e ele precisa ouvir._
-- `22:00-22:45` **Le Duc -> hotel** _(45 min)_
-    - carro: a partir das 22h45 o RER B interrompe o trecho CDG: 45 min
+    - _Primeiro dos dois jantares de trabalho que ele pediu. Ambiente reservado: cinco pessoas na mesa e ele precisa ouvir._
+- `22:00-22:50` **Le Duc -> hotel** _(50 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&travelmode=driving)
+    - carro: o RER B interrompe o trecho CDG a partir das 22h45: 50 min
 
 ### Segunda, 19/10 - Paris / Lille (horário de Paris)
 
-_3 compromisso(s), 4h36 em deslocamento._
+_2 compromisso(s), 4h36 em deslocamento._
 
-- `07:30-08:15` **Academia do hotel** - Novotel Suites Paris CDG Airport Villepinte
-- `09:30-09:40` **Hotel -> pavilhão** _(10 min)_
+- `07:30-08:15` **Academia do hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
+    - _Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel._
+- `09:30-09:40` **Hotel -> pavilhão** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `10:00-10:40` **Henrik Sørensen (Nordvest Foods) - números da transação** - Sala de reunião reservada, Paris Nord Villepinte
+- `10:00-10:40` **Henrik Sørensen (Nordvest Foods) - números da transação** - [Sala de reunião reservada, Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - com: Henrik Sørensen
-    - _Os 40 min que ele pediu, de manhã, como ele preferia. Sala fechada e não estande: a Claire Dubois, concorrente direta neste deal, está no evento a semana toda. Marcado 10:00 e não 09:30 porque pelo horário real a feira abre às 10:00._
-- `10:40-11:50` **Rodada de reuniões no pavilhão** - Paris Nord Villepinte
-    - _Janela encurtada pela ida a Lille. A agenda ainda estava em montagem._
-- `11:50-12:27` **Pavilhão -> Gare du Nord** _(37 min)_
+    - _Os 40 min que ele pediu, de manhã, como ele preferia. Sala fechada e não estande: a Claire Dubois, concorrente direta neste deal, está no evento a semana toda._
+- `10:40-11:50` **Rodada de reuniões no pavilhão** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+    - _Janela da agenda que ainda estava em montagem. Começa às 10:00, não às 09:30: pelo horário real a feira só abre às 10:00._
+- `11:50-12:27` **Pavilhão -> Gare du Nord** _(37 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Gare%20du%20Nord%2C%20Paris&travelmode=transit)
     - caminhada halls -> estação Parc des Expositions (61 m): 6 min
     - espera de plataforma (RER B a cada 15 min): 5 min
     - RER B, 9 paradas: 26 min
     - _Única exceção ao carro em toda a viagem: a estação fica a 61 m da entrada e o carro no meio do dia é pior._
-- `12:27-13:04` **Gare du Nord: almoço rápido e embarque** - Paris Gare du Nord
+- `12:27-13:04` **Gare du Nord: almoço rápido e embarque** - [Paris Gare du Nord](https://www.google.com/maps/search/?api=1&query=Gare%20du%20Nord%2C%20Paris)
     - _37 min de folga antes do TGV._
-- `13:04-14:06` **TGV Paris Gare du Nord -> Lille Europe** _(1h02)_
+- `13:04-14:06` **TGV Paris Gare du Nord -> Lille Europe** _(1h02)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Gare%20Lille%20Europe&travelmode=transit)
     - TGV, 202 km, 2a classe conforme política para trecho até 3h: 62 min
-- `14:06-14:36` **Lille Europe -> planta da Coopérative du Nord** _(30 min)_
+- `14:06-14:36` **Lille Europe -> planta da Coopérative du Nord** _(30 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Lille%2C%20France&travelmode=driving)
     - carro (ESTIMADO: o corpus não traz o endereço da planta): 30 min
     - _Trecho estimado. Ver incerteza U-004: com o endereço real, este tempo muda._
-- `15:00-16:30` **Visita à planta da Coopérative du Nord** - Lille
-- `16:30-17:00` **Planta -> Lille Europe** _(30 min)_
+- `15:00-16:30` **Visita à planta da Coopérative du Nord** - [Lille](https://www.google.com/maps/search/?api=1&query=Lille%2C%20France)
+- `16:30-17:00` **Planta -> Lille Europe** _(30 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Gare%20Lille%20Europe&travelmode=driving)
     - carro (estimado): 30 min
-- `17:22-18:24` **TGV Lille Europe -> Paris Gare du Nord** _(1h02)_
+- `17:22-18:24` **TGV Lille Europe -> Paris Gare du Nord** _(1h02)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Gare%20du%20Nord%2C%20Paris&travelmode=transit)
     - TGV, 2a classe: 62 min
-- `18:24-19:09` **Gare du Nord -> hotel** _(45 min)_
+- `18:24-19:09` **Gare du Nord -> hotel** _(45 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&travelmode=driving)
     - carro, pico do fim de tarde: 45 min
-- `20:00-21:00` **Jantar leve no hotel** - Novotel Suites Paris CDG Airport Villepinte
-    - _A agenda marcava 20:00 livre. Dia de 11h de porta a porta: noite sem compromisso._
+- `20:00-21:00` **Jantar leve no hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
+    - _A agenda marcava a noite livre._
 
 ### Terça, 20/10 - Paris (horário de Paris)
 
 _4 compromisso(s), 2h10 em deslocamento._
 
-- `07:30-08:15` **Academia do hotel** - Novotel Suites Paris CDG Airport Villepinte
-- `09:40-09:50` **Hotel -> pavilhão** _(10 min)_
+- `07:30-08:15` **Academia do hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
+    - _Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel._
+- `09:30-09:40` **Hotel -> pavilhão** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `10:00-10:45` **Rafael Ortega (Grupo Ibérica Fresh)** - Paris Nord Villepinte
+- `10:00-10:45` **Rafael Ortega (Grupo Ibérica Fresh)** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - com: Rafael Ortega
     - _Terça é o único dia dele no evento. Fornecedor de duas investidas, e fala espanhol, que o Sebastian fala._
-- `11:00-11:40` **Café com Tomás Beltrán** - Paris Nord Villepinte
+- `11:00-11:40` **Café com Tomás Beltrán** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - com: Tomás Beltrán
     - _Sem agenda fixa, conhece todo mundo. Vale o café._
-- `12:00-13:00` **Almoço na praça de alimentação** - Paris Nord Villepinte
-- `13:45-14:00` **-> Hall 5A** _(15 min)_
+- `12:00-13:00` **Almoço na praça de alimentação** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `13:00-13:45` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `13:45-14:00` **Caminhada até o Hall 5A** _(15 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=walking)
     - caminhada entre halls: 15 min
-- `14:00-15:00` **SIAL: Private label - o que mudou no varejo europeu** - Hall 5A
+- `14:00-15:00` **SIAL: Private label - o que mudou no varejo europeu** - [Hall 5A](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - _Casa com sourcing, o outro foco declarado da edição._
-- `15:30-16:00` **Café com Claire Dubois (Fonds Meridien)** - Área de café neutra, Paris Nord Villepinte
+- `15:00-15:30` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `15:30-16:00` **Café com Claire Dubois (Fonds Meridien)** - [Área de café neutra, Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
     - com: Claire Dubois
-    - _Relacionamento com fundos europeus, sem pauta. Nordvest fora da conversa: ela é concorrente direta nesse deal e você falou com o Henrik ontem. Local público e neutro, longe do estande da Nordvest._
-- `16:00-17:30` **Estandes e conversas abertas** - Paris Nord Villepinte
-- `17:50-18:45` **Pavilhão -> Le Duc** _(55 min)_
+    - _Relacionamento com fundos europeus, sem pauta. Nordvest fora da conversa: ela é concorrente direta nesse deal. Local público e neutro, longe do estande da Nordvest._
+- `16:00-17:50` **Estandes e conversas abertas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `17:50-18:45` **Pavilhão -> Le Duc** _(55 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Le%20Duc%2C%20243%20boulevard%20Raspail%2C%2075014%20Paris&travelmode=driving)
     - carro, 28,9 km ao 14e, pico do fim de tarde: 55 min
 - `19:00-21:30` **Jantar com investidores** - Le Duc, 243 boulevard Raspail, 75014 Paris
     - com: Investidores (contraparte externa)
     - _Segundo dos dois jantares de trabalho que ele pediu, com contraparte externa. Peixe e ambiente reservado, e comporta mesa maior se forem mais de quatro._
-- `21:30-22:20` **Le Duc -> hotel** _(50 min)_
+- `21:30-22:20` **Le Duc -> hotel** _(50 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&travelmode=driving)
     - carro: o RER B interrompe o trecho CDG a partir das 22h45: 50 min
 
 ### Quarta, 21/10 - Paris (horário de Paris)
 
 _1 compromisso(s), 45 min em deslocamento._
 
-- `07:30-08:15` **Academia do hotel** - Novotel Suites Paris CDG Airport Villepinte
-- `09:30-10:00` **Late check-out solicitado e mala na portaria** - Novotel Suites Paris CDG Airport Villepinte
-    - _O check-out padrão e meio-dia e a sessão de encerramento é 11:00-12:00: não dá para estar nos dois. Late check-out pedido na reserva; se negarem, a mala fica na portaria._
-- `10:30-10:40` **Hotel -> pavilhão** _(10 min)_
+- `07:30-08:15` **Academia do hotel** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
+    - _Fitness In Balance, acesso 24h. Academia foi um dos critérios de escolha do hotel._
+- `09:30-10:00` **Late check-out solicitado e mala na portaria** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
+    - _O check-out padrão é meio-dia e a sessão de encerramento é 11:00-12:00: não dá para estar nos dois. Late check-out pedido na reserva; se negarem, a mala fica na portaria._
+- `10:30-10:40` **Hotel -> pavilhão** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `11:00-12:00` **SIAL: encerramento** - Paris Nord Villepinte
-- `12:00-13:00` **Almoço e últimas conversas** - Paris Nord Villepinte
-- `13:00-13:10` **Pavilhão -> hotel** _(10 min)_
+- `11:00-12:00` **SIAL: encerramento** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `12:00-13:00` **Almoço e últimas conversas** - [Paris Nord Villepinte](https://www.google.com/maps/search/?api=1&query=Paris%20Nord%20Villepinte%2C%2082%20Avenue%20des%20Nations%2C%2093420%20Villepinte)
+- `13:00-13:10` **Pavilhão -> hotel** _(10 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&travelmode=driving)
     - carro, 1,6 km: 10 min
-- `13:10-15:30` **Hotel: trabalho e reorganizar a mala** - Novotel Suites Paris CDG Airport Villepinte
+- `13:10-15:35` **Hotel: trabalho e reorganizar a mala** - [Novotel Suites Paris CDG Airport Villepinte](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - _Janela de folga deliberada antes do aeroporto._
-- `15:35-16:00` **Hotel -> CDG Terminal 2E** _(25 min)_
+- `15:35-16:00` **Hotel -> CDG Terminal 2E** _(25 min)_ · [rota](https://www.google.com/maps/dir/?api=1&destination=A%C3%A9roport%20Paris-Charles%20de%20Gaulle%2C%20Terminal%202E&travelmode=driving)
     - carro, 12,3 km: 25 min
-- `16:00-18:55` **CDG: check-in, bagagem, fronteira de saída e sala** - CDG Terminal 2E
+- `16:00-18:55` **CDG: check-in, bagagem, fronteira de saída e sala** - [CDG Terminal 2E](https://www.google.com/maps/search/?api=1&query=A%C3%A9roport%20Paris-Charles%20de%20Gaulle%2C%20Terminal%202E)
     - _2h55 de antecedência. O EES também roda na saída, e não só na entrada._
 - `18:55-23:59` **Air France CDG -> GRU** - CDG -> GRU
-    - _AF-0454 CDG 18:55 -> GRU 05:25(+1)_
+    - _AF-0454 CDG 18:55 -> GRU 05:25(+1). Pousa em GRU 22/10 às 05:25._
+
+### Quinta, 22/10 - São Paulo (horário de Brasília)
+
+_0 compromisso(s), 1h45 em deslocamento._
+
+- `05:25-07:10` **Pouso em GRU -> São Paulo** _(1h45)_
+    - taxiamento, desembarque e caminhada: 15 min
+    - imigração brasileira (cidadão, e-gates): 15 min
+    - esteira de bagagem: 25 min
+    - carro, GRU -> São Paulo no início da manhã: 50 min
+    - _Destino estimado: o corpus não diz se ele vai para casa ou para o escritório._
+- `07:10-13:00` **Manhã sem reunião de decisão** - São Paulo
+    - _A mesma regra do sábado vale na volta: nada de decisão no primeiro meio período depois de voo intercontinental. A agenda exportada não tem nada marcado na quinta._
 
 ## Custos
 
@@ -184,11 +202,9 @@ _1 compromisso(s), 45 min em deslocamento._
 |---|---:|
 | Voo | 2.610 |
 | Refeições | 1.615 |
+| Deslocamento | 835 |
 | Hospedagem | 820 |
-| Deslocamento | 765 |
-| **Total** | **5.810** |
-
-Abertura linha a linha:
+| **Total** | **5.880** |
 
 **Voo**
 
@@ -196,28 +212,32 @@ Abertura linha a linha:
 
 **Refeições**
 
+- Sábado: almoço na praça de alimentação: EUR 35 _(estimado)_ - 1 pessoa
 - Sábado: jantar no hotel: EUR 55 - 1 pessoa
 - Domingo: almoço com a Sofia no L'Arpège: EUR 420 _(estimado)_ - estimado, 2 pessoas, contraparte externa
 - Domingo: jantar do time no Le Duc: EUR 550 _(estimado)_ - estimado, 5 pessoas
 - Segunda: almoço na estação e jantar no hotel: EUR 80 _(estimado)_ - 1 pessoa
 - Terça: almoço na feira: EUR 35 _(estimado)_ - 1 pessoa
 - Terça: jantar com investidores no Le Duc: EUR 440 _(estimado)_ - estimado, 5 pessoas, contraparte externa
-- Sábado: almoço na praça de alimentação: EUR 35 _(estimado)_ - 1 pessoa
+
+**Deslocamento**
+
+- Sexta: escritório -> GRU: EUR 35 _(estimado)_ - carro; câmbio assumido de R$ 6,20 por euro
+- Domingo: pavilhão -> Paris -> hotel: EUR 160 _(estimado)_ - VTC
+- Segunda: TGV Paris-Lille ida e volta: EUR 120 _(estimado)_ - 2a classe, estimado
+- Segunda: táxi em Lille, ida e volta à planta: EUR 90 _(estimado)_ - estimado
+- Terça: pavilhão -> Paris -> hotel: EUR 150 _(estimado)_ - VTC
+- Quinta: GRU -> São Paulo: EUR 35 _(estimado)_ - carro; câmbio assumido de R$ 6,20 por euro
+- Sábado: VTC CDG -> pavilhão + mala ao hotel: EUR 60 _(estimado)_ - pré-agendado, com meet and greet
+- Fast-track de imigração em CDG: EUR 45 _(estimado)_ - mitigação da fila EES
+- Hotel <-> pavilhão, a semana: EUR 90 _(estimado)_ - 8 trechos de carro, 1,6 km
+- Quarta: hotel -> CDG: EUR 50 _(estimado)_ - VTC
 
 **Hospedagem**
 
 - Novotel Suites Paris CDG Airport Villepinte, 4 noites x EUR 205: EUR 820 - Teto da política: EUR 320/noite
 
-**Deslocamento**
-
-- Segunda: TGV Paris-Lille ida e volta: EUR 120 _(estimado)_ - 2a classe, estimado
-- Segunda: táxi em Lille, ida e volta a planta: EUR 90 _(estimado)_ - estimado
-- Sábado: VTC CDG -> pavilhão + mala ao hotel: EUR 60 _(estimado)_ - pré-agendado, com meet and greet
-- Fast-track de imigração em CDG: EUR 45 _(estimado)_ - mitigação da fila EES
-- Hotel <-> pavilhão, a semana: EUR 90 _(estimado)_ - 8 trechos de carro, 1,6 km
-- Domingo: pavilhão -> Paris -> hotel: EUR 160 _(estimado)_ - VTC
-- Terça: pavilhão -> Paris -> hotel: EUR 150 _(estimado)_ - VTC
-- Quarta: hotel -> CDG: EUR 50 _(estimado)_ - VTC
+Valores do corpus, que manda nesses campos. Para ver o preço de hoje: [Tarifa agora no Google Flights](https://www.google.com/travel/flights?q=Flights%20from%20GRU%20to%20CDG%20on%202026-10-16%20returning%202026-10-21%20business%20class%20Air%20France) · [Diária agora no Booking](https://www.booking.com/searchresults.html?ss=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte&checkin=2026-10-17&checkout=2026-10-21&group_adults=1&no_rooms=1&group_children=0).
 
 ## Decisões
 
@@ -234,15 +254,15 @@ Abertura linha a linha:
 - _Seu perfil, mantido pela secretaria_ (`dados/perfil-ceo.md`): "Programa Flying Blue (Air France/KLM), nível Platinum. Faz questão. Já reclamou de passagem comprada fora do programa 'para economizar trezentos reais e perder a fila do embarque'."
 - _Aviso de greve publicado em 22/09_ (`https://striketracker.app/strikes-in-france/france-airline-crew-strike-17-21-oct-2026`): "France airline crew strike, 17-21 October 2026. The notice applies to every French carrier - Air France, Transavia France, HOP!, Corsair, Air Caraibes, French bee and the French bases of easyJet and Vueling. Expect targeted cancellations and delays rather than a shutdown. A notice is not a guarantee of stoppages: the real impact depends on how many crews walk out."
 
-- **Air France AF-0459 <- escolhida** _(direto, pousa 10:30 - EUR 2.610)_
+- **Air France AF-0459 <- escolhida** _(direto, pousa 10:30 - EUR 2.610)_ · [Tarifa agora no Google Flights](https://www.google.com/travel/flights?q=Flights%20from%20GRU%20to%20CDG%20on%202026-10-16%20returning%202026-10-21%20business%20class%20Air%20France)
     - a favor: Acumula Flying Blue, e você faz questão
     - a favor: Único com folga real (25 min) para a sessão das 13:00
     - a favor: Direto: sem risco de conexão perdida
-    - a favor: Volta 18:55 e a que já está na sua agenda
+    - a favor: Volta 18:55 é a que já está na sua agenda
     - contra: Air France está nominalmente no aviso de greve de 17 a 21/10
     - contra: Se cancelar, você perde o sábado inteiro
     - contra: EUR 490 mais caro que a LATAM
-- LATAM LA-8022 _(direto, pousa 10:55 - EUR 2.120)_
+- LATAM LA-8022 _(direto, pousa 10:55 - EUR 2.120)_ · [Tarifa agora no Google Flights](https://www.google.com/travel/flights?q=Flights%20from%20GRU%20to%20CDG%20on%202026-10-16%20returning%202026-10-21%20business%20class%20LATAM)
     - a favor: Fora do aviso de greve (o aviso cobre só transportadoras francesas)
     - a favor: EUR 490 mais barato
     - a favor: Direto, e a volta 18:55 também bate com a agenda
@@ -265,15 +285,15 @@ _Política:_ Diferença de tarifa acima de 15% em qualquer combinação, então 
 - _Nota da Camila: pendência não resolvida_ (`dados/notas/2026-08-14-camila-preparacao-sial.md`): "Pendência: definir o jantar de sábado. A secretaria não sabe se ele quer algo de trabalho ou a noite livre depois do voo. Perguntar."
 - _Seu perfil: depois de voo longo você não presta_ (`dados/perfil-ceo.md`): "Depois de voo longo ele não presta para reunião que exija cabeça. Já pediu duas vezes para a secretaria não marcar nada de decisão no primeiro meio período depois de pousar de voo intercontinental. Disse que 'assina qualquer bobagem nesse estado'. Almoço e coisa social tudo bem."
 
-- **Noite livre <- escolhida** _(jantar leve no hotel - EUR 55)_
+- **Noite livre <- escolhida** _(jantar leve no hotel - EUR 55)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - a favor: Você pousou de madrugada e dorme mal em voo, mesmo em executiva
     - a favor: Os dois jantares de trabalho que você pediu já estão no domingo e na terça
     - a favor: Hotel a 8 min do pavilhão: não gasta noite em trânsito
     - contra: Queima uma das cinco noites em Paris
-- Jantar de trabalho _(Clamato, frutos do mar - EUR ~160)_
+- Jantar de trabalho _(Clamato, frutos do mar - EUR ~160)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=Clamato%2C%2080%20rue%20de%20Charonne%2C%2075011%20Paris)
     - a favor: Aproveita a noite de sábado, que está vazia
     - a favor: Frutos do mar, que é o que você procura
-    - contra: Clamato e ruidoso e não aceita reserva, contra o que você já disse duas vezes
+    - contra: Clamato é ruidoso e não aceita reserva, contra o que você já disse duas vezes
     - contra: Le Duc está indisponível exatamente no sábado 17 (evento privado)
     - contra: Seria o terceiro jantar de trabalho, e você pediu dois
 
@@ -305,21 +325,21 @@ _Política:_ Diferença de tarifa acima de 15% em qualquer combinação, então 
 
 **Vigente:** L'Arpège, 7e - cozinha vegetal - EUR ~420 para dois _(recomendada)_
 
-**Por que é sua:** A Sofia e vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo.
+**Por que é sua:** A Sofia é vegetariana e isso já quase deu problema no jantar de Milão. O único lugar de cozinha vegetal da seleção está no 7e, e isso custa uma hora e meia de carro no seu domingo.
 
 **Os dois documentos em conflito:**
 
-- _Contatos: Sofia e vegetariana há anos_ (`dados/contatos.md`): "Sofia Marchetti: Marchetti Ingredienti (Itália), sócia. Confirmou almoço domingo. Não come carne (e vegetariana há anos. A Camila lembrou disso depois do jantar de Milão em maio, onde quase deu ruim)."
-- _Seleção: L'Arpège e a única cozinha vegetal_ (`web/restaurantes/selecao-paris.md`): "L'Arpège: 84 rue de Varenne, 75007 Paris. Cozinha vegetal. Disponível; reserva com antecedência."
+- _Contatos: Sofia é vegetariana há anos_ (`dados/contatos.md`): "Sofia Marchetti: Marchetti Ingredienti (Itália), sócia. Confirmou almoço domingo. Não come carne (e vegetariana há anos. A Camila lembrou disso depois do jantar de Milão em maio, onde quase deu ruim)."
+- _Seleção: L'Arpège é a única cozinha vegetal_ (`web/restaurantes/selecao-paris.md`): "L'Arpège: 84 rue de Varenne, 75007 Paris. Cozinha vegetal. Disponível; reserva com antecedência."
 
-- **L'Arpège, 7e <- escolhida** _(cozinha vegetal - EUR ~420 para dois)_
+- **L'Arpège, 7e <- escolhida** _(cozinha vegetal - EUR ~420 para dois)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=L'Arp%C3%A8ge%2C%2084%20rue%20de%20Varenne%2C%2075007%20Paris)
     - a favor: Cozinha vegetal: a anfitriã come bem, sem adaptação
     - a favor: Ambiente silencioso, dá para conversar
     - a favor: Você já fica em Paris para o jantar do time a noite
     - contra: 45 min de carro em cada sentido
     - contra: EUR ~420 para dois pressiona o 'bom senso' da política
     - contra: No mundo real a casa fecha no domingo (ver divergência V-003)
-- Perto da feira _(restaurante do hotel - EUR ~120 para dois)_
+- Perto da feira _(restaurante do hotel - EUR ~120 para dois)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=Novotel%20Suites%20Paris%20CDG%20Airport%20Villepinte)
     - a favor: Zero deslocamento: devolve 1h30 ao seu domingo
     - a favor: Muito mais barato
     - a favor: Você volta rápido para o pavilhão se quiser
@@ -364,13 +384,13 @@ _Política:_ Diferença de tarifa acima de 15% em qualquer combinação, então 
 - _Agenda: jantar com investidores, a confirmar_ (`dados/agenda-ceo.md`)
 - _Seu perfil: peixe, e nada de lugar barulhento_ (`dados/perfil-ceo.md`): "Gosta de peixe e frutos do mar. Come carne, mas não é o que procura. Não come cordeiro. Detesta jantar em restaurante barulhento."
 
-- **Le Duc, 14e <- escolhida** _(peixe, ambiente reservado - EUR ~440)_
+- **Le Duc, 14e <- escolhida** _(peixe, ambiente reservado - EUR ~440)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=Le%20Duc%2C%20243%20boulevard%20Raspail%2C%2075014%20Paris)
     - a favor: Peixe e frutos do mar, que é o que você procura
     - a favor: Ambiente reservado: da para negociar e ouvir
     - a favor: Comporta mesa maior se forem mais de quatro
     - contra: Mesmo lugar do jantar de domingo com o time
     - contra: 55 min de carro desde o pavilhão
-- Le Baratin, 20e _(bistrô pequeno, cozinha de mercado - EUR ~260)_
+- Le Baratin, 20e _(bistrô pequeno, cozinha de mercado - EUR ~260)_ · [Horários e reserva agora](https://www.google.com/maps/search/?api=1&query=Le%20Baratin%2C%203%20rue%20Jouye-Rouve%2C%2075020%20Paris)
     - a favor: Não repete o restaurante do domingo
     - a favor: Bem mais barato
     - a favor: Casa pequena e silenciosa, boa para conversa
@@ -421,7 +441,7 @@ As duas sessões se sobrepõem: proteínas 10:00-11:00 no Hall 6 e rastreabilida
 
 #### D-015 - Jantar do time no Le Duc
 
-E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc e a única que atende peixe em ambiente reservado. Clamato e ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.
+E o jantar com o time de originação que você pediu. Das opções livres no domingo, Le Duc é a única que atende peixe em ambiente reservado. Clamato é ruidoso e não reserva, e Paul Bert tem cordeiro na base do cardápio. Le Baratin fecha domingo.
 
 - ~~RES-02 Clamato~~: Ruidoso e sem reserva. Você já disse que em lugar barulhento não escuta ninguém e a reunião não rende, e são cinco pessoas na mesa.
 - ~~RES-03 Le Bistrot Paul Bert~~: Carnes e cordeiro na base do cardápio, e você não come cordeiro.
@@ -580,27 +600,29 @@ Terça é o único dia que a agenda deixou livre para circulação, e é o únic
 
 ## Travas de consistência
 
-O motor roda estas 16 verificações a cada recálculo. Elas existem para que nada quebre sem ninguém perceber.
+O motor roda estas 18 verificações a cada recálculo. Elas existem para que nada quebre sem ninguém perceber.
 
 | Trava | Situação | Detalhe |
 |---|---|---|
-| G-01 Chega ao Hall 7 antes das 13:00 de sábado | passa | Pronto 12:40, com 20 min de folga. |
-| G-02 Nenhuma reunião de números no primeiro meio período depois do pouso | passa | O Henrik, que é a conversa de números, está na segunda de manhã. Sábado tem só o Étienne, que é relacionamento. |
+| G-01 Chega ao Hall 7 antes da abertura de sábado | passa | Pronto 12:40, com 20 min de folga para as 13:00. |
+| G-02 Nenhuma reunião de números no primeiro meio período depois do pouso | passa | O Henrik, que é a conversa de números, não está no sábado. |
 | G-03 Diária do hotel dentro do teto da política | passa | EUR 205 contra teto de EUR 320. |
-| G-04 Henrik e Claire em dias diferentes, Henrik primeiro | passa | Henrik na segunda, Claire na terça. Nenhum cruzamento de agenda. |
-| G-05 Almoço com a Sofia em casa que serve bem uma vegetariana | passa | L'Arpège e cozinha vegetal. |
+| G-04 Henrik e Claire em dias diferentes, Henrik primeiro | passa | Henrik segunda, Claire terça. Nenhum cruzamento de agenda. |
+| G-05 Almoço com a Sofia em casa que serve bem uma vegetariana | passa | L'Arpège é cozinha vegetal. |
 | G-06 Nenhuma refeição dele em casa com cordeiro na base do cardápio | passa | Paul Bert ficou fora por isso. |
 | G-07 Nenhum jantar de trabalho em lugar barulhento | passa | Todos os jantares de trabalho em ambiente reservado. |
 | G-08 Exatamente dois jantares de trabalho na semana | passa | 2 jantar(es) de trabalho: 18/10, 20/10. A nota da Camila pediu dois: um com o time e um com contraparte externa. |
-| G-09 Nenhum restaurante usado em data que o corpus marca indisponível | passa | Checado contra indisponível_corpus de cada casa. |
+| G-09 Nenhum restaurante usado em data que o corpus marca indisponível | passa | Checado contra a disponibilidade de cada casa no corpus. |
 | G-10 Nenhum item do roteiro se sobrepõe a outro | passa | Checado dia a dia. |
 | G-11 Todo compromisso firme da agenda está no plano | passa | 7 compromissos firmes, todos presentes. |
 | G-12 Nenhuma volta noturna depende do RER B depois das 22h45 | passa | Todas as voltas de jantar são de carro, por causa da obra que vai até 11/12. |
-| G-13 Chega a CDG com antecedência suficiente na quarta | passa | No balcão as 16:00 para voo 18:55: 2h55 de antecedência. |
+| G-13 Chega a CDG com antecedência suficiente na quarta | passa | No balcão às 16:00 para voo 18:55: 2h55 de antecedência. |
 | G-14 TGV em 2a classe, como manda a política para trecho até 3h | passa | 2 trecho(s) de TGV, 62 min cada, todos em 2a classe. |
 | G-15 Nada crítico no pavilhão antes das 10:00 | passa | O corpus diz que a feira abre 09:30 e o site oficial diz 10:00. O plano fica de pé nos dois. |
 | G-16 Todo trecho declara componentes que somam a janela exata | passa | Checado em todos os deslocamentos. |
+| G-17 Chega a GRU com pelo menos 1h30 antes do voo de ida | passa | No aeroporto às 16:00 para voo 18:05: 2h05 de folga. |
+| G-18 Todo compromisso tem trajeto calculado | passa | Nenhum compromisso em lugar que o motor não saiba ligar. |
 
 ---
 
-_Fontes consultadas: 40 (12 corpus, 17 web, 9 mapa, 2 suposicao), com 57 trechos citados. Saída estruturada em `saida/plano.json`._
+_Fontes consultadas: 42 (12 corpus, 17 web, 9 mapa, 4 suposicao), com 59 trechos citados. Saída estruturada em `saida/plano.json`._

@@ -1,0 +1,4 @@
+{
+  "fato_novo": "O Novotel reajustou a diária para EUR 350.",
+  "mudar": [ { "em": "hoteis", "id": "HOT-02", "diaria_eur": 350 } ]
+}
