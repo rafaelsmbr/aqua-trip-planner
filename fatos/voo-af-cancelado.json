@@ -1,0 +1,5 @@
+{
+  "_doc": "Fato novo de exemplo para a demonstracao ao vivo. Use com: node cli/plano.js --fato fatos/voo-af-cancelado.json --delta",
+  "fato_novo": "A greve se confirmou e a Air France cancelou o AF-0459 do dia 17/10.",
+  "escolhas": { "voo": "VOO-B" }
+}

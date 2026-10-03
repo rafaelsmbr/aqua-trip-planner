@@ -1,0 +1,183 @@
+{
+  "_doc": "Tempos de deslocamento medidos no mundo real. Regra do desafio: preco e disponibilidade vem do corpus; distancia, rota e tempo vem do mundo real.",
+  "meta": {
+    "consultado_em": "2026-10-02T10:12:00-03:00",
+    "observacao": "Duracao em minutos. Onde ha variacao por horario, o plano usa o pior caso e registra o otimista."
+  },
+  "rotas": [
+    {
+      "id": "T-CDG-HOTEL",
+      "origem": "CDG Terminal 2E (saida do terminal)",
+      "destino": "Novotel Suites Paris CDG Airport Villepinte",
+      "modal": "carro / VTC pre-agendado",
+      "distancia_km": 12.3,
+      "duracao_min": 20,
+      "duracao_min_otimista": 15,
+      "fonte": "F-010",
+      "nota": "rome2rio: 19 min / 12,3 km"
+    },
+    {
+      "id": "T-CDG-EXPO",
+      "origem": "CDG Terminal 2E (saida do terminal)",
+      "destino": "Paris Nord Villepinte, 82 Avenue des Nations",
+      "modal": "carro / VTC pre-agendado",
+      "distancia_km": 11,
+      "duracao_min": 20,
+      "duracao_min_pico": 25,
+      "fonte": "F-011",
+      "nota": "Ponto de taxi/VTC no nivel -1, entre Halls 4 e 5."
+    },
+    {
+      "id": "T-CDG-EXPO-RER",
+      "origem": "CDG Terminal 2 (estacao RER)",
+      "destino": "Parc des Expositions (estacao) + caminhada aos halls",
+      "modal": "RER B",
+      "duracao_min": 16,
+      "fonte": "F-012",
+      "componentes": [
+        { "rotulo": "RER B em veiculo (1 a 2 paradas)", "minutos": 11 },
+        { "rotulo": "caminhada estacao -> entrada dos halls (61 m)", "minutos": 5 }
+      ],
+      "nota": "Frequencia a cada 15 min. Nao usado no sabado: bagagem despachada e risco de atraso."
+    },
+    {
+      "id": "T-HOTEL-EXPO",
+      "origem": "Novotel Suites Paris CDG Airport Villepinte",
+      "destino": "Paris Nord Villepinte, 82 Avenue des Nations",
+      "modal": "carro / shuttle",
+      "distancia_km": 1.6,
+      "duracao_min": 8,
+      "duracao_min_a_pe": 25,
+      "fonte": "F-013",
+      "nota": "1,2 a 2,0 km. A pe e viavel; carro e o default."
+    },
+    {
+      "id": "T-EXPO-LEDUC",
+      "origem": "Paris Nord Villepinte",
+      "destino": "Le Duc, 243 boulevard Raspail, 75014 Paris",
+      "modal": "carro / VTC",
+      "distancia_km": 28.9,
+      "duracao_min": 55,
+      "duracao_min_fora_pico": 37,
+      "fonte": "F-014",
+      "nota": "37 min fora de pico, 50-60 em pico. Plano usa 55."
+    },
+    {
+      "id": "T-EXPO-ARPEGE",
+      "origem": "Paris Nord Villepinte",
+      "destino": "L'Arpege, 84 rue de Varenne, 75007 Paris",
+      "modal": "carro / VTC",
+      "distancia_km": 26.7,
+      "duracao_min": 45,
+      "duracao_min_fora_pico": 32,
+      "duracao_min_transporte_publico": 59,
+      "fonte": "F-015",
+      "nota": "Carro escolhido: o perfil do CEO nao usa transporte publico em viagem."
+    },
+    {
+      "id": "T-HOTEL-PAULBERT",
+      "origem": "Novotel Suites Villepinte",
+      "destino": "Le Bistrot Paul Bert, 18 rue Paul Bert, 75011 Paris",
+      "modal": "carro / VTC",
+      "distancia_km": 19.7,
+      "duracao_min": 35,
+      "duracao_min_fora_pico": 23,
+      "fonte": "F-016",
+      "nota": "Rota levantada, mas o restaurante foi descartado (cordeiro na base do cardapio)."
+    },
+    {
+      "id": "T-EXPO-GARENORD",
+      "origem": "Paris Nord Villepinte (halls)",
+      "destino": "Paris Gare du Nord",
+      "modal": "RER B",
+      "duracao_min": 37,
+      "fonte": "F-017",
+      "componentes": [
+        { "rotulo": "caminhada halls -> estacao Parc des Expositions", "minutos": 6 },
+        { "rotulo": "espera de plataforma (frequencia 15 min)", "minutos": 5 },
+        { "rotulo": "RER B, 9 paradas", "minutos": 26 }
+      ],
+      "nota": "RER B e o modal correto: Gare du Nord de carro em dia de semana e pior."
+    },
+    {
+      "id": "T-GARENORD-LILLE",
+      "origem": "Paris Gare du Nord",
+      "destino": "Lille Europe",
+      "modal": "TGV (2a classe, politica para trecho < 3h)",
+      "distancia_km": 202,
+      "duracao_min": 62,
+      "fonte": "F-018",
+      "nota": "~21 trens/dia. Lille Flandres levaria 65-85 min."
+    },
+    {
+      "id": "T-LILLE-COOP",
+      "origem": "Lille Europe",
+      "destino": "Cooperative du Nord (endereco nao informado pelo corpus)",
+      "modal": "carro",
+      "distancia_km": 25,
+      "duracao_min": 30,
+      "fonte": "F-019",
+      "estimado": true,
+      "nota": "ESTIMATIVA. O corpus nao da o endereco da planta. Ver incerteza U-004."
+    },
+    {
+      "id": "T-HOTEL-CDG",
+      "origem": "Novotel Suites Villepinte",
+      "destino": "CDG Terminal 2E (balcao de check-in)",
+      "modal": "carro / VTC",
+      "distancia_km": 12.3,
+      "duracao_min": 25,
+      "duracao_min_otimista": 19,
+      "fonte": "F-010"
+    }
+  ],
+  "desembarque_cdg_t2e": {
+    "contexto": "Voo extra-Schengen (Brasil), passaporte brasileiro, bagagem despachada, sabado de manha",
+    "fonte": "F-020",
+    "cenario_usado_no_plano": "conservador",
+    "cenarios": {
+      "otimista": {
+        "total_min": 55,
+        "componentes": [
+          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 10 },
+          { "rotulo": "controle de fronteira (PAF/EES)", "minutos": 20 },
+          { "rotulo": "esteira de bagagem", "minutos": 20 },
+          { "rotulo": "saida / alfandega", "minutos": 5 }
+        ]
+      },
+      "conservador": {
+        "total_min": 100,
+        "componentes": [
+          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 20 },
+          { "rotulo": "controle de fronteira (PAF/EES)", "minutos": 50 },
+          { "rotulo": "esteira de bagagem (parcialmente paralela ao controle)", "minutos": 20 },
+          { "rotulo": "saida / alfandega", "minutos": 10 }
+        ]
+      },
+      "pessimo": {
+        "total_min": 120,
+        "componentes": [
+          { "rotulo": "taxiamento + desembarque + caminhada ao controle", "minutos": 20 },
+          { "rotulo": "controle de fronteira (PAF/EES) em pico de fila nao-UE", "minutos": 70 },
+          { "rotulo": "esteira de bagagem (parcialmente paralela)", "minutos": 20 },
+          { "rotulo": "saida / alfandega", "minutos": 10 }
+        ]
+      }
+    },
+    "achado_ees": "O Entry/Exit System entrou em operacao plena no Schengen em 10/04/2026. Todo nao-UE que entra em CDG passa por coleta biometrica (digitais + facial) em vez de carimbo. Medicoes publicas pos-EES: 60-120 min no controle nao-UE em horario movimentado no CDG, ate 3h no T2E no pico de verao, 20-40 min fora de pico. ACI Europe reporta tempo de processamento +70%. Esse achado nao esta no corpus e e o que mais mexe no plano de sabado."
+  },
+  "antecedencia_embarque": {
+    "cdg_long_haul_executiva": {
+      "recomendado_min": 180,
+      "usado_no_plano_min": 175,
+      "fonte": "F-021",
+      "nota": "3h padrao; 3h30-4h recomendado em 2026 por causa do EES tambem na saida."
+    },
+    "gru_long_haul_executiva": {
+      "recomendado_min": 150,
+      "usado_no_plano_min": 125,
+      "fonte": "F-022",
+      "nota": "Executiva + Flying Blue Platinum (fila prioritaria)."
+    }
+  }
+}

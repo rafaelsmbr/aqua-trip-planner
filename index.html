@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d4051'/%3E%3Cpath d='M22.2 21.6 20.6 14l3.1-3.1c1.3-1.3 1.8-3.1 1.3-4-.9-.4-2.7 0-4 1.3L17.9 11.3 10.6 9.7c-.4-.1-.8.1-1 .4l-.3.4c-.2.4-.1.9.3 1.2L13.9 15l-1.8 2.7H9.4l-.9.9 2.7 1.8 1.8 2.7.9-.9v-2.7l2.7-1.8 3.1 4.7c.3.4.7.4 1.2.3l.4-.2c.4-.3.5-.6.4-1z' fill='%23fff'/%3E%3C/svg%3E">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Roteiro, decisões e custos da viagem ao SIAL Paris 2026.">
+<script>
+  // manifest só fora de file://, onde o Chrome bloquearia o fetch e sujaria o console
+  if (location.protocol !== "file:") document.write('<link rel="manifest" href="manifest.webmanifest">');
+</script>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="SIAL 2026">
+<title>Paris · SIAL 2026 — Sebastian Popik</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="top-t">
+      <h1>SIAL Paris</h1>
+      <p id="hdrSub">Sebastian Popik</p>
+    </div>
+    <button class="health" id="healthBtn" aria-label="Travas de consistência"></button>
+    <button class="icon-btn fact" id="factBtn" aria-label="Fato novo"></button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="view on" id="v-roteiro">
+    <div id="hero"></div>
+    <div class="days" id="days" role="tablist" aria-label="Dias da viagem"></div>
+    <div class="day-hd" id="dayHd"></div>
+    <div id="alerts"></div>
+    <div class="tl" id="timeline"></div>
+  </section>
+
+  <section class="view" id="v-inbox">
+    <div id="inboxTop"></div>
+    <div id="pending"></div>
+    <div id="answered"></div>
+    <details class="autos-wrap" id="autosWrap">
+      <summary><span id="autosHd">O sistema decidiu por você</span><span class="chev-d"></span></summary>
+      <p class="hint">Onde havia uma resposta claramente melhor, o plano decidiu e registrou o porquê, junto com o que foi descartado.</p>
+      <div id="autos"></div>
+    </details>
+  </section>
+
+  <section class="view" id="v-custos">
+    <div id="totalBox"></div>
+    <div class="card" id="compBox"></div>
+    <h2 class="sec">Abertura por item</h2>
+    <div id="costLines"></div>
+    <h2 class="sec">Contra a política</h2>
+    <div class="card" id="policyBox"></div>
+    <h2 class="sec">Modo orçamento</h2>
+    <div class="card">
+      <p class="hint" style="margin-top:0">
+        Se o teto apertar, qual combinação é a mais barata que ainda passa nas
+        <b id="nGuards">16</b> travas? Testa as 64 combinações possíveis e diz o que você sacrifica.
+      </p>
+      <div class="budget-in">
+        <input type="number" id="budgetIn" inputmode="numeric" placeholder="Teto em EUR" aria-label="Teto em EUR">
+        <button class="btn" id="budgetGo">Testar</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn ghost" id="budget20">−20% do plano atual</button>
+        <button class="btn ghost" id="budgetClr">Limpar</button>
+      </div>
+      <div id="budgetOut"></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-fontes">
+    <div class="seg" id="seg" role="tablist" aria-label="Seções"></div>
+    <div class="seg-p" id="p-fontes">
+      <p class="hint">Todo número e todo horário do plano aponta para um destes. Preço e disponibilidade vêm do material da Aqua; distância, rota e tempo foram medidos no mundo real.</p>
+      <div id="sources"></div>
+    </div>
+    <div class="seg-p" id="p-divs" hidden>
+      <p class="hint">Quando a web contradisse o material da Aqua: o que cada um diz, qual foi usado e por quê.</p>
+      <div id="divs"></div>
+    </div>
+    <div class="seg-p" id="p-uncs" hidden>
+      <p class="hint">O que eu não sabia, o que perguntaria, e o que assumi para entregar mesmo assim.</p>
+      <div id="uncs"></div>
+    </div>
+    <div class="seg-p" id="p-travas" hidden>
+      <p class="hint">Rodam a cada mudança de escolha. Existem para pegar o que quebra sem ninguém perceber.</p>
+      <div class="card" id="guards"></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="grab" id="sheetGrab"><span></span></div>
+  <div class="sheet-hd">
+    <b id="sheetTitle"></b>
+    <button class="icon-btn x" id="sheetX" aria-label="Fechar"></button>
+  </div>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<nav class="nav" aria-label="Seções do app">
+  <div class="nav-in">
+    <button data-v="roteiro" class="on"><span class="ico" data-i="calendar"></span><span class="lbl">Roteiro</span></button>
+    <button data-v="inbox"><span class="ico" data-i="inbox"></span><span class="lbl">Inbox</span><span class="badge" id="navBadge" hidden></span></button>
+    <button data-v="custos"><span class="ico" data-i="wallet"></span><span class="lbl">Custos</span></button>
+    <button data-v="fontes"><span class="ico" data-i="layers"></span><span class="lbl">Fontes</span></button>
+  </div>
+</nav>
+
+<script src="dados/fontes.js"></script>
+<script src="dados/corpus.js"></script>
+<script src="dados/decisoes.js"></script>
+<script src="dados/deslocamentos.js"></script>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+<script>
+  // Offline: so registra em HTTPS. Em file:// o app abre normalmente, sem cache.
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "_doc": "Fato novo de exemplo: o orcamento caiu 20%. Estas sao as escolhas que o modo orcamento da interface encontra por forca bruta.",
+  "fato_novo": "O orcamento da viagem caiu 20%, de EUR 5.810 para cerca de EUR 4.650.",
+  "escolhas": { "voo": "VOO-B", "almoco_sofia": "perto_da_feira", "jantar_terca": "le_baratin", "lille": "remoto" }
+}

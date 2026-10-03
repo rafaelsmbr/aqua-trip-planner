@@ -1,0 +1,596 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aqua.capital/ai-calendar-challenge/schema-plano.json",
+  "title": "Plano de viagem: formato de entrega",
+  "type": "object",
+  "required": [
+    "meta",
+    "decisoes",
+    "restricoes",
+    "fontes",
+    "evidencias",
+    "incertezas",
+    "itinerario"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "candidato",
+        "gerado_em",
+        "rodada"
+      ],
+      "properties": {
+        "candidato": {
+          "type": "string"
+        },
+        "gerado_em": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 com data, hora e fuso (ex.: 2026-10-17T12:05:00+02:00)"
+        },
+        "rodada": {
+          "type": "string",
+          "enum": [
+            "primeira",
+            "delta"
+          ]
+        },
+        "modelo_usado": {
+          "type": "string"
+        },
+        "notas": {
+          "type": "string"
+        }
+      }
+    },
+    "decisoes": {
+      "type": "array",
+      "description": "Toda escolha do plano. Uma decisão por item.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "titulo",
+          "escolha",
+          "justificativa",
+          "restricoes",
+          "fontes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^D-[0-9]{3}$"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "escolha": {
+            "type": "string"
+          },
+          "alternativas_descartadas": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "opcao",
+                "motivo"
+              ],
+              "properties": {
+                "opcao": {
+                  "type": "string"
+                },
+                "motivo": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "justificativa": {
+            "type": "string"
+          },
+          "restricoes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^R-[0-9]{3}$"
+            }
+          },
+          "fontes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^F-[0-9]{3}$"
+            }
+          },
+          "incertezas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^U-[0-9]{3}$"
+            }
+          },
+          "metodo": {
+            "type": "string",
+            "enum": [
+              "modelo",
+              "regra",
+              "misto"
+            ],
+            "description": "Onde a decisão foi tomada: por LLM, por regra determinística, ou combinação."
+          },
+          "selecao": {
+            "type": "object",
+            "description": "Obrigatório quando a decisão escolhe uma opção cotada. Referencia dados/catalogo.json.",
+            "required": [
+              "catalogo",
+              "id"
+            ],
+            "properties": {
+              "catalogo": {
+                "type": "string",
+                "enum": [
+                  "voos",
+                  "hoteis",
+                  "restaurantes"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "pattern": "^(VOO|HOT|RES)-[A-Z0-9]{1,3}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "restricoes": {
+      "type": "array",
+      "description": "Toda restrição percebida, inclusive as que o pedido não menciona.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "descricao",
+          "origem",
+          "tipo"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^R-[0-9]{3}$"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "origem": {
+            "type": "string",
+            "description": "Arquivo ou fonte onde a restrição aparece"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "dura",
+              "preferencia",
+              "politica"
+            ]
+          }
+        }
+      }
+    },
+    "fontes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "tipo",
+          "referencia"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^F-[0-9]{3}$"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "corpus",
+              "web",
+              "mapa",
+              "suposicao"
+            ]
+          },
+          "referencia": {
+            "type": "string",
+            "description": "Caminho no repo, ou URL"
+          },
+          "consultado_em": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 com data, hora e fuso (ex.: 2026-10-17T12:05:00+02:00)"
+          }
+        }
+      }
+    },
+    "evidencias": {
+      "type": "array",
+      "description": "Snapshot do que foi efetivamente lido. Obrigatório para fonte do tipo web e mapa.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fonte",
+          "trecho"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^E-[0-9]{3}$"
+          },
+          "fonte": {
+            "type": "string",
+            "pattern": "^F-[0-9]{3}$"
+          },
+          "trecho": {
+            "type": "string",
+            "description": "O texto ou dado usado, copiado"
+          },
+          "endereco": {
+            "type": "string"
+          },
+          "acessado_em": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 com data, hora e fuso (ex.: 2026-10-17T12:05:00+02:00)"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "copia_local": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deslocamentos": {
+      "type": "array",
+      "description": "Todo tempo de deslocamento citado no plano.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "origem",
+          "destino",
+          "modal",
+          "partida",
+          "duracao_min",
+          "fonte"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^T-[0-9]{3}$"
+          },
+          "origem": {
+            "type": "string",
+            "description": "Endereço ou ponto de partida"
+          },
+          "destino": {
+            "type": "string"
+          },
+          "modal": {
+            "type": "string"
+          },
+          "partida": {
+            "type": "string",
+            "description": "Data e hora considerada"
+          },
+          "duracao_min": {
+            "type": "integer"
+          },
+          "fonte": {
+            "type": "string",
+            "pattern": "^F-[0-9]{3}$"
+          },
+          "buffer": {
+            "type": "object",
+            "description": "Obrigatório quando o trajeto inclui chegada de voo internacional.",
+            "properties": {
+              "componentes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "total_min": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "incertezas": {
+      "type": "array",
+      "description": "O que não foi possível decidir, e o que seria preciso para decidir.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "descricao",
+          "tipo",
+          "suposicao_adotada"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^U-[0-9]{3}$"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "pesquisavel",
+              "stakeholder"
+            ],
+            "description": "pesquisavel = a resposta existe no mundo; stakeholder = só a pessoa responde"
+          },
+          "pergunta": {
+            "type": "string",
+            "description": "A pergunta exata a fazer, quando tipo=stakeholder"
+          },
+          "suposicao_adotada": {
+            "type": "string"
+          },
+          "horizonte_da_fonte": {
+            "type": "string",
+            "format": "date",
+            "description": "Até quando a fonte consultada é informativa. Uma página de tráfego que só publica perturbações até 01/10 não diz nada sobre 17/10, e um anúncio publicado hoje também tem validade."
+          },
+          "fonte_horizonte": {
+            "type": "string",
+            "pattern": "^F-[0-9]{3}$",
+            "description": "De QUAL fonte esse horizonte é horizonte. Tem de ser um id de fontes[], e o plano tem de trazer alguma evidencia lida dessa mesma fonte. Horizonte de página que o plano não nomeia não é conferível."
+          },
+          "proxima_verificacao": {
+            "type": "string",
+            "description": "Quando reconsultar, e o que fazer se a resposta mudar. Obrigatório em toda consulta viva, inclusive quando a fonte já respondeu. Ex.: '72h antes do embarque e na manhã do dia; se houver interrupção, táxi de CDG ao pavilhão'."
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "anyOf": [
+                { "required": ["horizonte_da_fonte"] },
+                { "required": ["proxima_verificacao"] }
+              ]
+            },
+            "then": { "required": ["fonte_horizonte"] }
+          }
+        ]
+      }
+    },
+    "divergencias": {
+      "type": "array",
+      "description": "Quando a web contradisser o corpus.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "corpus_diz",
+          "web_diz",
+          "usada",
+          "justificativa"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^V-[0-9]{3}$"
+          },
+          "corpus_diz": {
+            "type": "string"
+          },
+          "web_diz": {
+            "type": "string"
+          },
+          "usada": {
+            "type": "string",
+            "enum": [
+              "corpus",
+              "web"
+            ]
+          },
+          "justificativa": {
+            "type": "string"
+          },
+          "evidencia": {
+            "type": "string",
+            "pattern": "^E-[0-9]{3}$"
+          }
+        }
+      }
+    },
+    "itinerario": {
+      "type": "array",
+      "description": "O plano em si, cronológico.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "inicio",
+          "titulo",
+          "tipo"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^I-[0-9]{3}$"
+          },
+          "inicio": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 com data, hora e fuso (ex.: 2026-10-17T12:05:00+02:00)"
+          },
+          "fim": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 com data, hora e fuso (ex.: 2026-10-17T12:05:00+02:00)"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "voo",
+              "deslocamento",
+              "hospedagem",
+              "sessao",
+              "reuniao",
+              "refeicao",
+              "livre"
+            ]
+          },
+          "local": {
+            "type": "string"
+          },
+          "participantes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decisoes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^D-[0-9]{3}$"
+            }
+          },
+          "ref": {
+            "type": "string",
+            "pattern": "^(VOO|HOT|RES)-[A-Z0-9]{1,3}$",
+            "description": "Id do catálogo, quando o item corresponde a uma opção cotada."
+          },
+          "de_item": {
+            "type": "string",
+            "pattern": "^I-[0-9]{3}$",
+            "description": "Item do itinerário onde este trecho começa (ex.: a chegada do voo)."
+          },
+          "para_item": {
+            "type": "string",
+            "pattern": "^I-[0-9]{3}$",
+            "description": "Item do itinerário onde este trecho termina (ex.: a sessão)."
+          },
+          "componentes": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Decomposição declarada da janela. Os minutos têm de somar exatamente a duração entre `inicio` e `fim`.",
+            "items": {
+              "type": "object",
+              "required": [
+                "rotulo",
+                "minutos"
+              ],
+              "properties": {
+                "rotulo": {
+                  "type": "string"
+                },
+                "minutos": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "fontes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^F-[0-9]{3}$"
+            },
+            "description": "Fontes que sustentam a estimativa do trecho."
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "tipo": {
+                  "const": "deslocamento"
+                }
+              },
+              "required": [
+                "tipo"
+              ]
+            },
+            "then": {
+              "required": [
+                "fim",
+                "de_item",
+                "para_item",
+                "componentes",
+                "fontes"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "delta": {
+      "type": "object",
+      "description": "Preenchido apenas na rodada delta.",
+      "properties": {
+        "fato_novo": {
+          "type": "string"
+        },
+        "preservado": {
+          "type": "array",
+          "description": "Decisões da primeira rodada que continuam válidas.",
+          "items": {
+            "type": "string",
+            "pattern": "^D-[0-9]{3}$"
+          }
+        },
+        "alterado": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "decisao",
+              "antes",
+              "depois",
+              "motivo"
+            ],
+            "properties": {
+              "decisao": {
+                "type": "string",
+                "pattern": "^D-[0-9]{3}$"
+              },
+              "antes": {
+                "type": "string"
+              },
+              "depois": {
+                "type": "string"
+              },
+              "motivo": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "quebrado": {
+          "type": "array",
+          "description": "O que deixou de ser possível por causa do fato novo.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

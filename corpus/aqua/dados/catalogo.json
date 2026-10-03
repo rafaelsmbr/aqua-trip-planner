@@ -1,0 +1,44 @@
+{
+  "nota": "Índice estruturado das opções cotadas. As páginas em web/ trazem o mesmo conteúdo em prosa. Referencie estes ids na sua entrega.",
+  "capturado_em": "2026-08-25",
+  "voos": [
+    {"id": "VOO-A", "companhia": "TAP Air Portugal", "rota": "GRU-LIS-ORY", "chega_em": "ORY",
+     "chegada": "2026-10-17T12:40:00+02:00", "preco_eur": 1980, "programa": "Star Alliance", "flying_blue": false},
+    {"id": "VOO-B", "companhia": "LATAM", "rota": "GRU-CDG", "chega_em": "CDG",
+     "chegada": "2026-10-17T10:55:00+02:00", "preco_eur": 2120, "programa": "oneworld", "flying_blue": false},
+    {"id": "VOO-C", "companhia": "KLM", "rota": "GRU-AMS-CDG", "chega_em": "CDG",
+     "chegada": "2026-10-17T11:20:00+02:00", "preco_eur": 2450, "programa": "Flying Blue", "flying_blue": true},
+    {"id": "VOO-D", "companhia": "Air France", "rota": "GRU-CDG", "chega_em": "CDG",
+     "chegada": "2026-10-17T10:30:00+02:00", "preco_eur": 2610, "programa": "Flying Blue", "flying_blue": true}
+  ],
+  "hoteis": [
+    {"id": "HOT-01", "nome": "Best Western Hôtel Acadie Paris Nord Villepinte",
+     "local": "Villepinte (93)", "diaria_eur": 179, "academia": false},
+    {"id": "HOT-02", "nome": "Novotel Suites Paris CDG Airport Villepinte",
+     "local": "Villepinte (93)", "diaria_eur": 205, "academia": true},
+    {"id": "HOT-03", "nome": "Hyatt Place Paris Charles de Gaulle Airport",
+     "local": "Roissy-en-France (95)", "diaria_eur": 268, "academia": true},
+    {"id": "HOT-04", "nome": "ibis Paris Avenue d'Italie 13ème",
+     "local": "Place d'Italie, Paris 13e", "diaria_eur": 152, "academia": false},
+    {"id": "HOT-05", "nome": "Sofitel Le Scribe Paris Opéra",
+     "local": "1 rue Scribe, 75009 Paris", "diaria_eur": 415, "academia": true}
+  ],
+  "restaurantes": [
+    {"id": "RES-01", "nome": "Le Duc", "endereco": "243 boulevard Raspail, 75014 Paris",
+     "perfil": "peixe e frutos do mar, ambiente reservado",
+     "indisponivel_em": ["2026-10-17"], "motivo_indisponibilidade": "casa reservada para evento privado"},
+    {"id": "RES-02", "nome": "Clamato", "endereco": "80 rue de Charonne, 75011 Paris",
+     "perfil": "frutos do mar, sem reserva, ambiente ruidoso", "indisponivel_em": []},
+    {"id": "RES-03", "nome": "Le Bistrot Paul Bert", "endereco": "18 rue Paul Bert, 75011 Paris",
+     "perfil": "bistrô clássico, carnes e cordeiro", "indisponivel_em": []},
+    {"id": "RES-04", "nome": "L'Arpège", "endereco": "84 rue de Varenne, 75007 Paris",
+     "perfil": "cozinha vegetal", "indisponivel_em": []},
+    {"id": "RES-05", "nome": "Le Baratin", "endereco": "3 rue Jouye-Rouve, 75020 Paris",
+     "perfil": "bistrô pequeno, cozinha de mercado",
+     "indisponivel_em": ["2026-10-18", "2026-10-19"], "motivo_indisponibilidade": "fecha domingos e segundas"},
+    {"id": "RES-06", "nome": "Restaurante do Novotel Suites Villepinte",
+     "endereco": "Villepinte (93)", "perfil": "serviço de hotel, cardápio curto", "indisponivel_em": []},
+    {"id": "RES-07", "nome": "Restaurante do Hyatt Place Paris CDG",
+     "endereco": "Roissy-en-France (95)", "perfil": "cozinha internacional", "indisponivel_em": []}
+  ]
+}
